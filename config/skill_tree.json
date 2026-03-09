@@ -1,0 +1,126 @@
+{
+  "nodes": [
+    { "id": "standing",         "name": "Standing",         "branch": "standup", "x": 1100, "y": 140,  "description": "Neutral standing position. Starting point for all takedowns and guard pulls.", "target_drills": 50 },
+    { "id": "single_leg_td",    "name": "Single Leg",       "branch": "standup", "x": 860,  "y": 320,  "description": "Clinch with one leg secured — drive through or trip to finish.", "target_drills": 60 },
+    { "id": "double_leg_td",    "name": "Double Leg",       "branch": "standup", "x": 1100, "y": 320,  "description": "Shoot to both legs, drive opponent backward.", "target_drills": 60 },
+    { "id": "guard_pull",       "name": "Guard Pull",       "branch": "standup", "x": 1340, "y": 320,  "description": "Pull to closed or open guard from standing.", "target_drills": 50 },
+
+    { "id": "closed_guard",     "name": "Closed Guard",     "branch": "bottom",  "x": 1100, "y": 530,  "description": "Legs closed around opponent's waist. Fundamental guard.", "target_drills": 50 },
+    { "id": "butterfly_guard",  "name": "Butterfly Guard",  "branch": "bottom",  "x": 830,  "y": 680,  "description": "Hooks under opponent's thighs. Powerful sweep platform.", "target_drills": 80 },
+    { "id": "open_guard",       "name": "Open Guard",       "branch": "bottom",  "x": 1100, "y": 680,  "description": "Legs off opponent, creating frames and distance.", "target_drills": 60 },
+    { "id": "half_guard",       "name": "Half Guard",       "branch": "bottom",  "x": 1370, "y": 680,  "description": "One leg trapped between opponent's legs. Fight for underhook.", "target_drills": 80 },
+    { "id": "dlr_guard",        "name": "De La Riva",       "branch": "bottom",  "x": 640,  "y": 840,  "description": "Hook around opponent's lead leg. Entry to berimbolo and leg attacks.", "target_drills": 100 },
+    { "id": "spider_guard",     "name": "Spider Guard",     "branch": "bottom",  "x": 930,  "y": 840,  "description": "Feet on biceps, gripping sleeves. Controls posture and sets sweeps.", "target_drills": 100 },
+    { "id": "x_guard",          "name": "X Guard",          "branch": "bottom",  "x": 720,  "y": 1000, "description": "Both hooks under opponent creating X shape. Tilts and sweeps.", "target_drills": 120 },
+    { "id": "leg_entanglements","name": "Leg Entanglements","branch": "bottom",  "x": 1000, "y": 1000, "description": "50/50, heel hooks, kneebars. High-percentage finishing position.", "target_drills": 150 },
+
+    { "id": "side_control",     "name": "Side Control",     "branch": "top",     "x": 1600, "y": 530,  "description": "Cross-body pin. Stable top position for submissions and transitions.", "target_drills": 50 },
+    { "id": "mount",            "name": "Mount",            "branch": "top",     "x": 1820, "y": 390,  "description": "Sitting on opponent's chest. Most dominant ground position.", "target_drills": 60 },
+    { "id": "knee_on_belly",    "name": "Knee on Belly",    "branch": "top",     "x": 1820, "y": 630,  "description": "Knee on opponent's mid-section. Pressure and quick submission threats.", "target_drills": 70 },
+    { "id": "north_south",      "name": "North South",      "branch": "top",     "x": 1600, "y": 340,  "description": "Head-to-feet pin. Heavy pressure, kimura and choke threats.", "target_drills": 60 },
+
+    { "id": "back_control",     "name": "Back Control",     "branch": "back",    "x": 590,  "y": 510,  "description": "Hooks in, seatbelt grip. Most dominant finishing position.", "target_drills": 60 },
+    { "id": "body_triangle",    "name": "Body Triangle",    "branch": "back",    "x": 370,  "y": 360,  "description": "Legs locked in triangle around body. Unbreakable back control.", "target_drills": 100 },
+
+    { "id": "turtle",           "name": "Turtle",           "branch": "turtle",  "x": 590,  "y": 690,  "description": "Defensive turtle position. Protect against back takes.", "target_drills": 60 }
+  ],
+
+  "edges": [
+    { "id": "e1",  "source": "standing",        "target": "single_leg_td",    "technique": "Single Leg Shot" },
+    { "id": "e2",  "source": "standing",        "target": "double_leg_td",    "technique": "Double Leg Shot" },
+    { "id": "e3",  "source": "standing",        "target": "guard_pull",       "technique": "Jump to Guard" },
+    { "id": "e4",  "source": "guard_pull",      "target": "closed_guard",     "technique": "Pull to Closed Guard" },
+    { "id": "e5",  "source": "single_leg_td",   "target": "half_guard",       "technique": "Single Leg to Half Guard" },
+    { "id": "e6",  "source": "double_leg_td",   "target": "side_control",     "technique": "Double Leg to Side Control" },
+    { "id": "e7",  "source": "closed_guard",    "target": "butterfly_guard",  "technique": "Hip Escape to Butterfly" },
+    { "id": "e8",  "source": "closed_guard",    "target": "open_guard",       "technique": "Open Guard Entry" },
+    { "id": "e9",  "source": "closed_guard",    "target": "half_guard",       "technique": "Half Guard Entry" },
+    { "id": "e10", "source": "closed_guard",    "target": "back_control",     "technique": "Arm Drag to Back" },
+    { "id": "e11", "source": "butterfly_guard", "target": "dlr_guard",        "technique": "DLR Entry from Butterfly" },
+    { "id": "e12", "source": "butterfly_guard", "target": "x_guard",          "technique": "X-Guard Entry" },
+    { "id": "e13", "source": "open_guard",      "target": "dlr_guard",        "technique": "De La Riva Setup" },
+    { "id": "e14", "source": "open_guard",      "target": "spider_guard",     "technique": "Spider Guard Setup" },
+    { "id": "e15", "source": "dlr_guard",       "target": "x_guard",          "technique": "X-Guard from DLR" },
+    { "id": "e16", "source": "dlr_guard",       "target": "leg_entanglements","technique": "Heel Hook Entry from DLR" },
+    { "id": "e17", "source": "x_guard",         "target": "leg_entanglements","technique": "50/50 from X-Guard" },
+    { "id": "e18", "source": "half_guard",      "target": "back_control",     "technique": "Back Take from Half Guard" },
+    { "id": "e19", "source": "half_guard",      "target": "butterfly_guard",  "technique": "Butterfly from Half Guard" },
+    { "id": "e20", "source": "side_control",    "target": "mount",            "technique": "Mount Transition" },
+    { "id": "e21", "source": "side_control",    "target": "knee_on_belly",    "technique": "Knee on Belly Transition" },
+    { "id": "e22", "source": "side_control",    "target": "north_south",      "technique": "North South Transition" },
+    { "id": "e23", "source": "side_control",    "target": "turtle",           "technique": "Escape to Turtle" },
+    { "id": "e24", "source": "mount",           "target": "back_control",     "technique": "Back Take from Mount" },
+    { "id": "e25", "source": "knee_on_belly",   "target": "mount",            "technique": "Mount from KOB" },
+    { "id": "e26", "source": "north_south",     "target": "back_control",     "technique": "Back Take from North South" },
+    { "id": "e27", "source": "back_control",    "target": "body_triangle",    "technique": "Body Triangle Lock" },
+    { "id": "e28", "source": "turtle",          "target": "back_control",     "technique": "Back Take from Turtle" },
+    { "id": "e29", "source": "spider_guard",    "target": "x_guard",          "technique": "X-Guard from Spider" }
+  ],
+
+  "techniques": [
+    { "id": "armbar_closed",         "name": "Armbar from Closed Guard",      "position_id": "closed_guard",      "difficulty": "beginner",     "target_drills": 50,  "description": "Classic straight armbar attacking the elbow.",                          "video_id": "pQ43Oy5k9yQ" },
+    { "id": "triangle_closed",       "name": "Triangle Choke",                "position_id": "closed_guard",      "difficulty": "beginner",     "target_drills": 50,  "description": "Leg triangle around neck and arm, cut the angle.",                   "video_id": "Igj_u2dt3l0" },
+    { "id": "guillotine_closed",     "name": "Guillotine from Guard",         "position_id": "closed_guard",      "difficulty": "beginner",     "target_drills": 50,  "description": "Head in guillotine, guard closed, squeeze finish.",                  "video_id": "u99wWZtZOjA" },
+    { "id": "hip_bump_sweep",        "name": "Hip Bump Sweep",                "position_id": "closed_guard",      "difficulty": "beginner",     "target_drills": 50,  "description": "Sit up, bump hips, take top position." },
+    { "id": "scissor_sweep",         "name": "Scissor Sweep",                 "position_id": "closed_guard",      "difficulty": "beginner",     "target_drills": 50,  "description": "Scissor legs — one blocks hips, one hooks knee." },
+    { "id": "pendulum_sweep",        "name": "Pendulum Sweep",                "position_id": "closed_guard",      "difficulty": "intermediate", "target_drills": 100, "description": "Kimura grip, swing legs to sweep opponent over.",                   "video_id": "jrnrbdU70yM" },
+    { "id": "omoplata_closed",       "name": "Omoplata",                      "position_id": "closed_guard",      "difficulty": "intermediate", "target_drills": 100, "description": "Leg over shoulder lock, sweep or submit.",                          "video_id": "jrnrbdU70yM" },
+    { "id": "flower_sweep",          "name": "Flower Sweep (Gambarotto)",     "position_id": "closed_guard",      "difficulty": "intermediate", "target_drills": 80,  "description": "Collar and ankle grip sweep from closed guard.",                    "video_id": "Igj_u2dt3l0" },
+    { "id": "arm_drag_closed",       "name": "Arm Drag to Back",              "position_id": "closed_guard",      "difficulty": "intermediate", "target_drills": 80,  "description": "Pull arm across body, take the back.",                             "video_id": "e_c7G5T_ZR8" },
+
+    { "id": "elevator_sweep",        "name": "Elevator Sweep",                "position_id": "butterfly_guard",   "difficulty": "beginner",     "target_drills": 60,  "description": "Underhook, hook lifts leg — butterfly elevator.",                  "video_id": "C5zVTEbR5PQ" },
+    { "id": "hook_sweep",            "name": "Hook Sweep (Basic Butterfly)",  "position_id": "butterfly_guard",   "difficulty": "beginner",     "target_drills": 60,  "description": "Double underhooks, hook lifts and tips opponent.",                 "video_id": "cPxQngVOxmo" },
+    { "id": "arm_drag_butterfly",    "name": "Arm Drag from Butterfly",       "position_id": "butterfly_guard",   "difficulty": "intermediate", "target_drills": 80,  "description": "Arm drag to single leg or back exposure.",                         "video_id": "89WaflvGduQ" },
+    { "id": "double_overhook_sweep", "name": "Double Overhook Sweep",         "position_id": "butterfly_guard",   "difficulty": "advanced",     "target_drills": 150, "description": "Lock both overhooks, hip extension sweep." },
+
+    { "id": "dlr_sweep",             "name": "De La Riva Sweep",              "position_id": "dlr_guard",         "difficulty": "intermediate", "target_drills": 100, "description": "DLR hook + sleeve grip, trip opponent's far leg.",               "video_id": "03OlYwB6KkM" },
+    { "id": "dlr_berimbolo",         "name": "Berimbolo",                     "position_id": "dlr_guard",         "difficulty": "advanced",     "target_drills": 200, "description": "Invert under opponent, come up to the back." },
+    { "id": "dlr_back_take",         "name": "Back Take from DLR",           "position_id": "dlr_guard",         "difficulty": "advanced",     "target_drills": 150, "description": "DLR to back exposure, secure seatbelt.",                          "video_id": "Veja8IU9OMw" },
+
+    { "id": "spider_sweep",          "name": "Spider Guard Sweep",            "position_id": "spider_guard",      "difficulty": "intermediate", "target_drills": 100, "description": "Bicep control, triangle legs to tip sideways." },
+    { "id": "triangle_spider",       "name": "Triangle from Spider",          "position_id": "spider_guard",      "difficulty": "intermediate", "target_drills": 100, "description": "Shoot triangle off spider guard." },
+    { "id": "lasso_entry",           "name": "Lasso Guard Entry",             "position_id": "spider_guard",      "difficulty": "advanced",     "target_drills": 120, "description": "Wrap leg around arm to lasso, controlling posture.",               "video_id": "Akln6--DNLo" },
+
+    { "id": "x_tilt_sweep",         "name": "X-Guard Tilt Sweep",            "position_id": "x_guard",           "difficulty": "intermediate", "target_drills": 120, "description": "X hooks, tilt opponent sideways to sweep.",                        "video_id": "lPyQnojQfKQ" },
+    { "id": "x_standup_sweep",      "name": "X-Guard Stand-up Sweep",        "position_id": "x_guard",           "difficulty": "intermediate", "target_drills": 120, "description": "X hooks, lift opponent up and dump them.",                         "video_id": "3mSLkXHqXUg" },
+
+    { "id": "half_underhook_sweep",  "name": "Half Guard Underhook Sweep",   "position_id": "half_guard",        "difficulty": "beginner",     "target_drills": 60,  "description": "Win underhook, come up to single leg.",                            "video_id": "9Z9TSmFppbM" },
+    { "id": "old_school_sweep",      "name": "Old School Sweep",              "position_id": "half_guard",        "difficulty": "beginner",     "target_drills": 60,  "description": "Block far knee, take the back or sweep.",                          "video_id": "7L44EZ2K5_4" },
+    { "id": "z_guard",               "name": "Z-Guard (Knee Shield)",         "position_id": "half_guard",        "difficulty": "intermediate", "target_drills": 80,  "description": "Knee shield from half guard for frame.",                            "video_id": "i422T9BJ47o" },
+    { "id": "lockdown",              "name": "Lockdown",                      "position_id": "half_guard",        "difficulty": "advanced",     "target_drills": 150, "description": "Lock legs in figure-four, control opponent's hips." },
+
+    { "id": "outside_heel_hook",     "name": "Outside Heel Hook",             "position_id": "leg_entanglements", "difficulty": "advanced",     "target_drills": 200, "description": "Heel hook attacking the outside of the knee.",                    "video_id": "EHbqx2k7vxc" },
+    { "id": "inside_heel_hook",      "name": "Inside Heel Hook",              "position_id": "leg_entanglements", "difficulty": "advanced",     "target_drills": 200, "description": "Heel hook attacking the inside of the knee.",                     "video_id": "fVPgnA0iAII" },
+    { "id": "kneebar",               "name": "Kneebar",                       "position_id": "leg_entanglements", "difficulty": "advanced",     "target_drills": 150, "description": "Hyperextend opponent's knee with hip pressure.",                   "video_id": "T8mxghSFKNU" },
+    { "id": "straight_ankle_lock",   "name": "Straight Ankle Lock",           "position_id": "leg_entanglements", "difficulty": "beginner",     "target_drills": 50,  "description": "Reap the ankle, squeeze for Achilles pressure.",                   "video_id": "qdtphNG6Ci8" },
+    { "id": "fifty_fifty_heel",      "name": "50/50 Heel Hook",               "position_id": "leg_entanglements", "difficulty": "advanced",     "target_drills": 200, "description": "Heel hook from the 50/50 leg entanglement.",                       "video_id": "fVPgnA0iAII" },
+
+    { "id": "single_leg_td",         "name": "Single Leg Takedown",           "position_id": "single_leg_td",    "difficulty": "beginner",     "target_drills": 60,  "description": "Secure one leg, drive or trip opponent down.",                     "video_id": "b_9lp1ivs20" },
+    { "id": "double_leg_td_tech",    "name": "Double Leg Takedown",           "position_id": "double_leg_td",    "difficulty": "beginner",     "target_drills": 60,  "description": "Shoot to both legs, drive through to mat.",                        "video_id": "yREaKFKt99s" },
+    { "id": "uchi_mata",             "name": "Uchi Mata",                     "position_id": "standing",         "difficulty": "intermediate", "target_drills": 100, "description": "Inner thigh throw, Judo classic.",                                 "video_id": "86B5fvZya7c" },
+    { "id": "osoto_gari",            "name": "Osoto Gari",                    "position_id": "standing",         "difficulty": "intermediate", "target_drills": 80,  "description": "Major outer reap, trip lead leg.",                                 "video_id": "86B5fvZya7c" },
+    { "id": "hip_toss",              "name": "Hip Toss (Ogoshi)",             "position_id": "standing",         "difficulty": "intermediate", "target_drills": 80,  "description": "Load opponent onto hips, rotate to throw.",                        "video_id": "tqufaFxEOrQ" },
+    { "id": "guard_pull_tech",       "name": "Guard Pull Technique",          "position_id": "guard_pull",       "difficulty": "beginner",     "target_drills": 50,  "description": "Jump to guard, control sleeve and collar.",                        "video_id": "FChiT98_Cgg" },
+
+    { "id": "americana_side",        "name": "Americana from Side Control",   "position_id": "side_control",     "difficulty": "beginner",     "target_drills": 50,  "description": "Paintbrush grip, crank arm behind the back." },
+    { "id": "kimura_side",           "name": "Kimura from Side Control",      "position_id": "side_control",     "difficulty": "beginner",     "target_drills": 50,  "description": "Figure-four on the wrist, rotate the shoulder.",                   "video_id": "CNHcxDTU62Y" },
+    { "id": "ns_choke",              "name": "North South Choke",             "position_id": "north_south",      "difficulty": "advanced",     "target_drills": 150, "description": "Arm under neck, hip pressure — tight choke.",                     "video_id": "LvlgiXNYrFU" },
+    { "id": "kimura_ns",             "name": "Kimura from North South",       "position_id": "north_south",      "difficulty": "intermediate", "target_drills": 100, "description": "Figure-four from north south, rotate shoulder.",                   "video_id": "uMRlcpzYA30" },
+
+    { "id": "armbar_mount",          "name": "Armbar from Mount",             "position_id": "mount",            "difficulty": "beginner",     "target_drills": 50,  "description": "S-mount, swing leg over head, extend hips.",                      "video_id": "55Ux8giP_PY" },
+    { "id": "triangle_mount",        "name": "Triangle from Mount",           "position_id": "mount",            "difficulty": "intermediate", "target_drills": 100, "description": "Shoot leg over for triangle setup from mount.",                    "video_id": "od-lcD_34f8" },
+    { "id": "ezekiel_choke",         "name": "Ezekiel Choke",                 "position_id": "mount",            "difficulty": "intermediate", "target_drills": 80,  "description": "Gi sleeve grip choke from mount or guard." },
+
+    { "id": "kob_baseball",          "name": "Baseball Bat Choke",            "position_id": "knee_on_belly",    "difficulty": "intermediate", "target_drills": 100, "description": "Two-handed collar grip, rotate to choke.",                         "video_id": "YUcw3VoIV94" },
+    { "id": "kob_armbar",            "name": "Armbar from KOB",               "position_id": "knee_on_belly",    "difficulty": "intermediate", "target_drills": 80,  "description": "Grab arm as opponent pushes knee, armbar.",                        "video_id": "2YCvFt6kTuk" },
+
+    { "id": "rnc",                   "name": "Rear Naked Choke",              "position_id": "back_control",     "difficulty": "beginner",     "target_drills": 50,  "description": "Arm under chin, hand to bicep, squeeze.",                          "video_id": "6-CtducCY3k" },
+    { "id": "bow_arrow",             "name": "Bow and Arrow Choke",           "position_id": "back_control",     "difficulty": "intermediate", "target_drills": 100, "description": "Collar grip, pull collar + leg — gi finisher.",                    "video_id": "eSsnIKo8gLw" },
+    { "id": "collar_choke_back",     "name": "Collar Choke from Back",        "position_id": "back_control",     "difficulty": "intermediate", "target_drills": 80,  "description": "Four-finger collar grip, second hand behind neck.",                "video_id": "LvlgiXNYrFU" },
+    { "id": "armbar_back",           "name": "Armbar from Back Control",      "position_id": "back_control",     "difficulty": "advanced",     "target_drills": 150, "description": "Extend arm, roll to armbar when hooks lose.",                      "video_id": "5Gn8ODvm_Ac" },
+
+    { "id": "clock_choke",           "name": "Clock Choke from Turtle",       "position_id": "turtle",           "difficulty": "intermediate", "target_drills": 80,  "description": "Collar and ankle grip, roll opponent to choke.",                   "video_id": "lFLFI2_k6Uc" },
+    { "id": "arm_drag_turtle",       "name": "Arm Drag from Turtle",          "position_id": "turtle",           "difficulty": "intermediate", "target_drills": 80,  "description": "Drag turtle's arm, take the back.",                               "video_id": "0USkh4_dt2g" },
+    { "id": "granby_roll",           "name": "Granby Roll Escape",            "position_id": "turtle",           "difficulty": "intermediate", "target_drills": 80,  "description": "Roll over shoulder to escape turtle pressure." }
+  ]
+}
