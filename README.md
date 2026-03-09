@@ -89,35 +89,6 @@ cd src/frontend && npm run build
 uvicorn src.backend.main:app --reload
 ```
 
-## Push to GitHub
-
-### First-time publish
-
-1. Create a new empty repository on GitHub (no README, no .gitignore, no license).
-2. From this project root, run:
-
-```bash
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo>.git
-git push -u origin main
-```
-
-### If remote already exists
-
-```bash
-git add .
-git commit -m "Update project"
-git push
-```
-
-### Verify remote
-
-```bash
-git remote -v
-```
-
 ## Notes
 
 - This project currently uses SQLite (`bjj_tracker.db`) for local storage.
