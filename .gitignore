@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Build output
+src/frontend/dist/
+
+# Local data / env
+*.db-journal
+*.db-wal
+*.db-shm
+dev.db
+.env
+.DS_Store
+demo.db

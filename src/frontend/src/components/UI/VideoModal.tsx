@@ -19,8 +19,8 @@ export default function VideoModal() {
         >
           <motion.div
             key="video-modal-content"
-            className="relative overflow-hidden rounded-2xl border border-purple-700/40 shadow-2xl"
-            style={{ background: '#09091a', width: 'min(800px, 92vw)' }}
+            className="relative overflow-hidden border border-blood/50 shadow-2xl"
+            style={{ background: '#0b0b0d', width: 'min(800px, 92vw)' }}
             initial={{ scale: 0.9, y: 24, opacity: 0 }}
             animate={{ scale: 1, y: 0, opacity: 1 }}
             exit={{ scale: 0.9, y: 24, opacity: 0 }}

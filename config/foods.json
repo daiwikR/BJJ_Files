@@ -1,0 +1,935 @@
+{
+ "note": "Approximate values per 100 g (or 100 mL for drinks), rounded from standard food composition tables. Brands and recipes vary.",
+ "foods": [
+  {
+   "name": "Chicken breast, cooked",
+   "category": "protein",
+   "kcal": 165,
+   "protein": 31,
+   "carbs": 0,
+   "fat": 3.6,
+   "serving_g": 150,
+   "serving_label": "1 fillet"
+  },
+  {
+   "name": "Chicken thigh, cooked",
+   "category": "protein",
+   "kcal": 209,
+   "protein": 26,
+   "carbs": 0,
+   "fat": 11,
+   "serving_g": 120,
+   "serving_label": "1 thigh"
+  },
+  {
+   "name": "Egg, whole",
+   "category": "protein",
+   "kcal": 143,
+   "protein": 12.6,
+   "carbs": 0.7,
+   "fat": 9.5,
+   "serving_g": 50,
+   "serving_label": "1 egg"
+  },
+  {
+   "name": "Egg white",
+   "category": "protein",
+   "kcal": 52,
+   "protein": 10.9,
+   "carbs": 0.7,
+   "fat": 0.2,
+   "serving_g": 33,
+   "serving_label": "1 white"
+  },
+  {
+   "name": "Beef mince 10% fat, cooked",
+   "category": "protein",
+   "kcal": 217,
+   "protein": 26,
+   "carbs": 0,
+   "fat": 12,
+   "serving_g": 150,
+   "serving_label": "1 portion"
+  },
+  {
+   "name": "Steak, lean, cooked",
+   "category": "protein",
+   "kcal": 190,
+   "protein": 29,
+   "carbs": 0,
+   "fat": 8,
+   "serving_g": 180,
+   "serving_label": "1 steak"
+  },
+  {
+   "name": "Salmon, cooked",
+   "category": "protein",
+   "kcal": 206,
+   "protein": 22,
+   "carbs": 0,
+   "fat": 13,
+   "serving_g": 140,
+   "serving_label": "1 fillet"
+  },
+  {
+   "name": "Tuna, canned in water",
+   "category": "protein",
+   "kcal": 116,
+   "protein": 26,
+   "carbs": 0,
+   "fat": 1,
+   "serving_g": 100,
+   "serving_label": "1 small can"
+  },
+  {
+   "name": "White fish, cooked",
+   "category": "protein",
+   "kcal": 105,
+   "protein": 23,
+   "carbs": 0,
+   "fat": 1,
+   "serving_g": 150,
+   "serving_label": "1 fillet"
+  },
+  {
+   "name": "Prawns, cooked",
+   "category": "protein",
+   "kcal": 99,
+   "protein": 24,
+   "carbs": 0.2,
+   "fat": 0.3,
+   "serving_g": 100,
+   "serving_label": "1 portion"
+  },
+  {
+   "name": "Mutton or lamb curry",
+   "category": "protein",
+   "kcal": 160,
+   "protein": 13,
+   "carbs": 4,
+   "fat": 10,
+   "serving_g": 200,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Chicken curry",
+   "category": "protein",
+   "kcal": 140,
+   "protein": 13,
+   "carbs": 4,
+   "fat": 8,
+   "serving_g": 200,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Tofu, firm",
+   "category": "protein",
+   "kcal": 144,
+   "protein": 15,
+   "carbs": 3,
+   "fat": 9,
+   "serving_g": 120,
+   "serving_label": "1/2 block"
+  },
+  {
+   "name": "Paneer",
+   "category": "protein",
+   "kcal": 296,
+   "protein": 18,
+   "carbs": 3,
+   "fat": 23,
+   "serving_g": 80,
+   "serving_label": "1 portion"
+  },
+  {
+   "name": "Tempeh",
+   "category": "protein",
+   "kcal": 192,
+   "protein": 20,
+   "carbs": 8,
+   "fat": 11,
+   "serving_g": 100,
+   "serving_label": "1 portion"
+  },
+  {
+   "name": "Whey protein powder",
+   "category": "protein",
+   "kcal": 390,
+   "protein": 78,
+   "carbs": 8,
+   "fat": 6,
+   "serving_g": 30,
+   "serving_label": "1 scoop"
+  },
+  {
+   "name": "Plant protein powder",
+   "category": "protein",
+   "kcal": 380,
+   "protein": 72,
+   "carbs": 8,
+   "fat": 7,
+   "serving_g": 30,
+   "serving_label": "1 scoop"
+  },
+  {
+   "name": "Milk, whole",
+   "category": "dairy",
+   "kcal": 62,
+   "protein": 3.2,
+   "carbs": 4.8,
+   "fat": 3.3,
+   "serving_g": 250,
+   "serving_label": "1 glass"
+  },
+  {
+   "name": "Milk, skimmed",
+   "category": "dairy",
+   "kcal": 35,
+   "protein": 3.4,
+   "carbs": 5,
+   "fat": 0.1,
+   "serving_g": 250,
+   "serving_label": "1 glass"
+  },
+  {
+   "name": "Greek yogurt, plain",
+   "category": "dairy",
+   "kcal": 97,
+   "protein": 9,
+   "carbs": 3.9,
+   "fat": 5,
+   "serving_g": 170,
+   "serving_label": "1 pot"
+  },
+  {
+   "name": "Curd / dahi",
+   "category": "dairy",
+   "kcal": 61,
+   "protein": 3.5,
+   "carbs": 4.7,
+   "fat": 3.3,
+   "serving_g": 150,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Cottage cheese",
+   "category": "dairy",
+   "kcal": 98,
+   "protein": 11,
+   "carbs": 3.4,
+   "fat": 4.3,
+   "serving_g": 150,
+   "serving_label": "1 portion"
+  },
+  {
+   "name": "Cheddar cheese",
+   "category": "dairy",
+   "kcal": 403,
+   "protein": 25,
+   "carbs": 1.3,
+   "fat": 33,
+   "serving_g": 30,
+   "serving_label": "1 slice"
+  },
+  {
+   "name": "Lassi, sweet",
+   "category": "dairy",
+   "kcal": 75,
+   "protein": 2.6,
+   "carbs": 12,
+   "fat": 2,
+   "serving_g": 250,
+   "serving_label": "1 glass"
+  },
+  {
+   "name": "White rice, cooked",
+   "category": "carbs",
+   "kcal": 130,
+   "protein": 2.7,
+   "carbs": 28,
+   "fat": 0.3,
+   "serving_g": 180,
+   "serving_label": "1 cup"
+  },
+  {
+   "name": "Brown rice, cooked",
+   "category": "carbs",
+   "kcal": 112,
+   "protein": 2.6,
+   "carbs": 23,
+   "fat": 0.9,
+   "serving_g": 180,
+   "serving_label": "1 cup"
+  },
+  {
+   "name": "Oats, dry",
+   "category": "carbs",
+   "kcal": 379,
+   "protein": 13,
+   "carbs": 67,
+   "fat": 6.5,
+   "serving_g": 50,
+   "serving_label": "1/2 cup"
+  },
+  {
+   "name": "Pasta, cooked",
+   "category": "carbs",
+   "kcal": 158,
+   "protein": 5.8,
+   "carbs": 31,
+   "fat": 0.9,
+   "serving_g": 200,
+   "serving_label": "1 plate"
+  },
+  {
+   "name": "Bread, wholemeal",
+   "category": "carbs",
+   "kcal": 247,
+   "protein": 13,
+   "carbs": 41,
+   "fat": 3.4,
+   "serving_g": 40,
+   "serving_label": "1 slice"
+  },
+  {
+   "name": "Bread, white",
+   "category": "carbs",
+   "kcal": 265,
+   "protein": 9,
+   "carbs": 49,
+   "fat": 3.2,
+   "serving_g": 40,
+   "serving_label": "1 slice"
+  },
+  {
+   "name": "Roti / chapati",
+   "category": "carbs",
+   "kcal": 297,
+   "protein": 9.8,
+   "carbs": 50,
+   "fat": 6,
+   "serving_g": 40,
+   "serving_label": "1 roti"
+  },
+  {
+   "name": "Paratha",
+   "category": "carbs",
+   "kcal": 326,
+   "protein": 6.4,
+   "carbs": 45,
+   "fat": 13,
+   "serving_g": 80,
+   "serving_label": "1 paratha"
+  },
+  {
+   "name": "Naan",
+   "category": "carbs",
+   "kcal": 290,
+   "protein": 9,
+   "carbs": 50,
+   "fat": 5.5,
+   "serving_g": 90,
+   "serving_label": "1 naan"
+  },
+  {
+   "name": "Dosa, plain",
+   "category": "carbs",
+   "kcal": 168,
+   "protein": 3.9,
+   "carbs": 29,
+   "fat": 3.7,
+   "serving_g": 90,
+   "serving_label": "1 dosa"
+  },
+  {
+   "name": "Idli",
+   "category": "carbs",
+   "kcal": 146,
+   "protein": 4.5,
+   "carbs": 30,
+   "fat": 0.4,
+   "serving_g": 40,
+   "serving_label": "1 idli"
+  },
+  {
+   "name": "Poha",
+   "category": "carbs",
+   "kcal": 130,
+   "protein": 2.6,
+   "carbs": 23,
+   "fat": 3,
+   "serving_g": 200,
+   "serving_label": "1 plate"
+  },
+  {
+   "name": "Upma",
+   "category": "carbs",
+   "kcal": 125,
+   "protein": 3,
+   "carbs": 19,
+   "fat": 4,
+   "serving_g": 200,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Potato, boiled",
+   "category": "carbs",
+   "kcal": 87,
+   "protein": 1.9,
+   "carbs": 20,
+   "fat": 0.1,
+   "serving_g": 200,
+   "serving_label": "1 medium"
+  },
+  {
+   "name": "Sweet potato, baked",
+   "category": "carbs",
+   "kcal": 90,
+   "protein": 2,
+   "carbs": 21,
+   "fat": 0.2,
+   "serving_g": 200,
+   "serving_label": "1 medium"
+  },
+  {
+   "name": "Quinoa, cooked",
+   "category": "carbs",
+   "kcal": 120,
+   "protein": 4.4,
+   "carbs": 21,
+   "fat": 1.9,
+   "serving_g": 180,
+   "serving_label": "1 cup"
+  },
+  {
+   "name": "Noodles, cooked",
+   "category": "carbs",
+   "kcal": 138,
+   "protein": 4.5,
+   "carbs": 25,
+   "fat": 2.1,
+   "serving_g": 200,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Tortilla wrap",
+   "category": "carbs",
+   "kcal": 310,
+   "protein": 8,
+   "carbs": 52,
+   "fat": 7,
+   "serving_g": 60,
+   "serving_label": "1 wrap"
+  },
+  {
+   "name": "Breakfast cereal",
+   "category": "carbs",
+   "kcal": 375,
+   "protein": 8,
+   "carbs": 80,
+   "fat": 2,
+   "serving_g": 40,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Granola",
+   "category": "carbs",
+   "kcal": 470,
+   "protein": 10,
+   "carbs": 64,
+   "fat": 20,
+   "serving_g": 50,
+   "serving_label": "1 portion"
+  },
+  {
+   "name": "Rice cakes",
+   "category": "carbs",
+   "kcal": 387,
+   "protein": 8,
+   "carbs": 82,
+   "fat": 3,
+   "serving_g": 18,
+   "serving_label": "2 cakes"
+  },
+  {
+   "name": "Dal, cooked",
+   "category": "legumes",
+   "kcal": 116,
+   "protein": 7,
+   "carbs": 17,
+   "fat": 2.5,
+   "serving_g": 200,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Chickpeas / chana, cooked",
+   "category": "legumes",
+   "kcal": 164,
+   "protein": 8.9,
+   "carbs": 27,
+   "fat": 2.6,
+   "serving_g": 150,
+   "serving_label": "1 cup"
+  },
+  {
+   "name": "Rajma, cooked",
+   "category": "legumes",
+   "kcal": 127,
+   "protein": 8.7,
+   "carbs": 23,
+   "fat": 0.5,
+   "serving_g": 150,
+   "serving_label": "1 cup"
+  },
+  {
+   "name": "Black beans, cooked",
+   "category": "legumes",
+   "kcal": 132,
+   "protein": 8.9,
+   "carbs": 24,
+   "fat": 0.5,
+   "serving_g": 150,
+   "serving_label": "1 cup"
+  },
+  {
+   "name": "Lentils, cooked",
+   "category": "legumes",
+   "kcal": 116,
+   "protein": 9,
+   "carbs": 20,
+   "fat": 0.4,
+   "serving_g": 150,
+   "serving_label": "1 cup"
+  },
+  {
+   "name": "Hummus",
+   "category": "legumes",
+   "kcal": 166,
+   "protein": 8,
+   "carbs": 14,
+   "fat": 10,
+   "serving_g": 50,
+   "serving_label": "2 tbsp"
+  },
+  {
+   "name": "Sprouts, moong",
+   "category": "legumes",
+   "kcal": 30,
+   "protein": 3,
+   "carbs": 6,
+   "fat": 0.2,
+   "serving_g": 100,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Banana",
+   "category": "fruit",
+   "kcal": 89,
+   "protein": 1.1,
+   "carbs": 23,
+   "fat": 0.3,
+   "serving_g": 120,
+   "serving_label": "1 medium"
+  },
+  {
+   "name": "Apple",
+   "category": "fruit",
+   "kcal": 52,
+   "protein": 0.3,
+   "carbs": 14,
+   "fat": 0.2,
+   "serving_g": 180,
+   "serving_label": "1 medium"
+  },
+  {
+   "name": "Orange",
+   "category": "fruit",
+   "kcal": 47,
+   "protein": 0.9,
+   "carbs": 12,
+   "fat": 0.1,
+   "serving_g": 150,
+   "serving_label": "1 medium"
+  },
+  {
+   "name": "Mango",
+   "category": "fruit",
+   "kcal": 60,
+   "protein": 0.8,
+   "carbs": 15,
+   "fat": 0.4,
+   "serving_g": 200,
+   "serving_label": "1 cup"
+  },
+  {
+   "name": "Berries, mixed",
+   "category": "fruit",
+   "kcal": 50,
+   "protein": 0.9,
+   "carbs": 12,
+   "fat": 0.4,
+   "serving_g": 100,
+   "serving_label": "1 handful"
+  },
+  {
+   "name": "Grapes",
+   "category": "fruit",
+   "kcal": 69,
+   "protein": 0.7,
+   "carbs": 18,
+   "fat": 0.2,
+   "serving_g": 100,
+   "serving_label": "1 handful"
+  },
+  {
+   "name": "Watermelon",
+   "category": "fruit",
+   "kcal": 30,
+   "protein": 0.6,
+   "carbs": 7.6,
+   "fat": 0.2,
+   "serving_g": 300,
+   "serving_label": "2 slices"
+  },
+  {
+   "name": "Dates",
+   "category": "fruit",
+   "kcal": 282,
+   "protein": 2.5,
+   "carbs": 75,
+   "fat": 0.4,
+   "serving_g": 30,
+   "serving_label": "3 dates"
+  },
+  {
+   "name": "Raisins",
+   "category": "fruit",
+   "kcal": 299,
+   "protein": 3.1,
+   "carbs": 79,
+   "fat": 0.5,
+   "serving_g": 30,
+   "serving_label": "1 small box"
+  },
+  {
+   "name": "Mixed vegetables, cooked",
+   "category": "veg",
+   "kcal": 65,
+   "protein": 2.6,
+   "carbs": 10,
+   "fat": 1.5,
+   "serving_g": 150,
+   "serving_label": "1 portion"
+  },
+  {
+   "name": "Broccoli",
+   "category": "veg",
+   "kcal": 35,
+   "protein": 2.4,
+   "carbs": 7,
+   "fat": 0.4,
+   "serving_g": 100,
+   "serving_label": "1 portion"
+  },
+  {
+   "name": "Spinach / palak",
+   "category": "veg",
+   "kcal": 23,
+   "protein": 2.9,
+   "carbs": 3.6,
+   "fat": 0.4,
+   "serving_g": 100,
+   "serving_label": "1 portion"
+  },
+  {
+   "name": "Salad, mixed leaves",
+   "category": "veg",
+   "kcal": 17,
+   "protein": 1.3,
+   "carbs": 3,
+   "fat": 0.2,
+   "serving_g": 80,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Sabzi, mixed veg curry",
+   "category": "veg",
+   "kcal": 90,
+   "protein": 2.5,
+   "carbs": 9,
+   "fat": 5,
+   "serving_g": 150,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Avocado",
+   "category": "fats",
+   "kcal": 160,
+   "protein": 2,
+   "carbs": 9,
+   "fat": 15,
+   "serving_g": 100,
+   "serving_label": "1/2 avocado"
+  },
+  {
+   "name": "Olive oil",
+   "category": "fats",
+   "kcal": 884,
+   "protein": 0,
+   "carbs": 0,
+   "fat": 100,
+   "serving_g": 10,
+   "serving_label": "1 tbsp"
+  },
+  {
+   "name": "Ghee",
+   "category": "fats",
+   "kcal": 900,
+   "protein": 0,
+   "carbs": 0,
+   "fat": 100,
+   "serving_g": 5,
+   "serving_label": "1 tsp"
+  },
+  {
+   "name": "Butter",
+   "category": "fats",
+   "kcal": 717,
+   "protein": 0.9,
+   "carbs": 0.1,
+   "fat": 81,
+   "serving_g": 10,
+   "serving_label": "1 pat"
+  },
+  {
+   "name": "Peanut butter",
+   "category": "fats",
+   "kcal": 588,
+   "protein": 25,
+   "carbs": 20,
+   "fat": 50,
+   "serving_g": 20,
+   "serving_label": "1 tbsp"
+  },
+  {
+   "name": "Almonds",
+   "category": "fats",
+   "kcal": 579,
+   "protein": 21,
+   "carbs": 22,
+   "fat": 50,
+   "serving_g": 30,
+   "serving_label": "1 handful"
+  },
+  {
+   "name": "Peanuts",
+   "category": "fats",
+   "kcal": 567,
+   "protein": 26,
+   "carbs": 16,
+   "fat": 49,
+   "serving_g": 30,
+   "serving_label": "1 handful"
+  },
+  {
+   "name": "Mixed nuts",
+   "category": "fats",
+   "kcal": 607,
+   "protein": 20,
+   "carbs": 21,
+   "fat": 54,
+   "serving_g": 30,
+   "serving_label": "1 handful"
+  },
+  {
+   "name": "Chia seeds",
+   "category": "fats",
+   "kcal": 486,
+   "protein": 17,
+   "carbs": 42,
+   "fat": 31,
+   "serving_g": 15,
+   "serving_label": "1 tbsp"
+  },
+  {
+   "name": "Dark chocolate",
+   "category": "fats",
+   "kcal": 546,
+   "protein": 5,
+   "carbs": 61,
+   "fat": 31,
+   "serving_g": 20,
+   "serving_label": "2 squares"
+  },
+  {
+   "name": "Coconut water",
+   "category": "drinks",
+   "kcal": 19,
+   "protein": 0.7,
+   "carbs": 3.7,
+   "fat": 0.2,
+   "serving_g": 330,
+   "serving_label": "1 carton"
+  },
+  {
+   "name": "Sports drink",
+   "category": "drinks",
+   "kcal": 25,
+   "protein": 0,
+   "carbs": 6,
+   "fat": 0,
+   "serving_g": 500,
+   "serving_label": "1 bottle"
+  },
+  {
+   "name": "Orange juice",
+   "category": "drinks",
+   "kcal": 45,
+   "protein": 0.7,
+   "carbs": 10,
+   "fat": 0.2,
+   "serving_g": 250,
+   "serving_label": "1 glass"
+  },
+  {
+   "name": "Chocolate milk",
+   "category": "drinks",
+   "kcal": 83,
+   "protein": 3.4,
+   "carbs": 10,
+   "fat": 3.4,
+   "serving_g": 330,
+   "serving_label": "1 carton"
+  },
+  {
+   "name": "Coffee with milk",
+   "category": "drinks",
+   "kcal": 25,
+   "protein": 1.3,
+   "carbs": 2,
+   "fat": 1.2,
+   "serving_g": 200,
+   "serving_label": "1 cup"
+  },
+  {
+   "name": "Chai with milk and sugar",
+   "category": "drinks",
+   "kcal": 45,
+   "protein": 1,
+   "carbs": 7,
+   "fat": 1.3,
+   "serving_g": 150,
+   "serving_label": "1 cup"
+  },
+  {
+   "name": "Honey",
+   "category": "carbs",
+   "kcal": 304,
+   "protein": 0.3,
+   "carbs": 82,
+   "fat": 0,
+   "serving_g": 20,
+   "serving_label": "1 tbsp"
+  },
+  {
+   "name": "Energy gel",
+   "category": "carbs",
+   "kcal": 260,
+   "protein": 0,
+   "carbs": 65,
+   "fat": 0,
+   "serving_g": 40,
+   "serving_label": "1 gel"
+  },
+  {
+   "name": "Protein bar",
+   "category": "protein",
+   "kcal": 370,
+   "protein": 33,
+   "carbs": 35,
+   "fat": 12,
+   "serving_g": 60,
+   "serving_label": "1 bar"
+  },
+  {
+   "name": "Chicken biryani",
+   "category": "meals",
+   "kcal": 165,
+   "protein": 8,
+   "carbs": 20,
+   "fat": 6,
+   "serving_g": 300,
+   "serving_label": "1 plate"
+  },
+  {
+   "name": "Burrito bowl, chicken",
+   "category": "meals",
+   "kcal": 140,
+   "protein": 9,
+   "carbs": 16,
+   "fat": 4.5,
+   "serving_g": 400,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Pizza, cheese",
+   "category": "meals",
+   "kcal": 266,
+   "protein": 11,
+   "carbs": 33,
+   "fat": 10,
+   "serving_g": 120,
+   "serving_label": "1 slice"
+  },
+  {
+   "name": "Burger with bun",
+   "category": "meals",
+   "kcal": 250,
+   "protein": 13,
+   "carbs": 24,
+   "fat": 11,
+   "serving_g": 220,
+   "serving_label": "1 burger"
+  },
+  {
+   "name": "Sandwich, chicken",
+   "category": "meals",
+   "kcal": 210,
+   "protein": 13,
+   "carbs": 22,
+   "fat": 7.5,
+   "serving_g": 200,
+   "serving_label": "1 sandwich"
+  },
+  {
+   "name": "Acai bowl",
+   "category": "meals",
+   "kcal": 120,
+   "protein": 2,
+   "carbs": 20,
+   "fat": 4,
+   "serving_g": 350,
+   "serving_label": "1 bowl"
+  },
+  {
+   "name": "Samosa",
+   "category": "meals",
+   "kcal": 262,
+   "protein": 4,
+   "carbs": 28,
+   "fat": 15,
+   "serving_g": 60,
+   "serving_label": "1 samosa"
+  },
+  {
+   "name": "Fries",
+   "category": "meals",
+   "kcal": 312,
+   "protein": 3.4,
+   "carbs": 41,
+   "fat": 15,
+   "serving_g": 120,
+   "serving_label": "1 portion"
+  }
+ ]
+}

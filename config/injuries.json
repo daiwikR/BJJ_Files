@@ -1,0 +1,357 @@
+{
+  "disclaimer": "This library is general education, not a diagnosis or a treatment plan. Timelines are typical ranges and yours may differ. If anything in a red-flag list applies, or you are not clearly improving within two weeks, see a physiotherapist or sports doctor before you go back on the mat.",
+  "mat_levels": {
+    "off": "No mat time. Rehab only.",
+    "solo": "Solo movement and rehab on the mat. No partner contact.",
+    "drill": "Cooperative drilling with a trusted partner. No resistance.",
+    "positional": "Positional sparring from safe positions at 50-70%.",
+    "light": "Flow rolling and light rounds with chosen partners.",
+    "full": "Full training."
+  },
+  "sources": [
+    {"title": "Hinz et al. 2021, Injury patterns, risk factors and return to sport in Brazilian jiu-jitsu (Orthop J Sports Med)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8721390"},
+    {"title": "McDonald et al. 2017, Prevalence of injuries during Brazilian jiu-jitsu training (Sports)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5968975"},
+    {"title": "Kreiswirth et al. 2014, Incidence of injury among male BJJ fighters at the World No-Gi Championship (J Athl Train)", "url": "https://nata.kglmeridian.com/view/journals/attr/49/1/article-p89.xml"},
+    {"title": "Prevalence and profile of musculoskeletal injuries in high-performance BJJ athletes", "url": "https://opus.lib.uts.edu.au/handle/10453/166268"},
+    {"title": "University of Delaware / Sanford Health MCL sprain rehabilitation guidelines", "url": "https://www.sanfordhealth.org/-/media/org/files/medical-professionals/resources-and-education/isolated-mcl-sprain.pdf"},
+    {"title": "Consensus statement on concussion in sport, Amsterdam 2022 (graduated return to sport)", "url": "https://pubmed.ncbi.nlm.nih.gov/37316210/"}
+  ],
+  "injuries": [
+    {
+      "slug": "mcl-sprain",
+      "name": "MCL Sprain",
+      "region": "knee",
+      "tagline": "Inner-knee ligament. The most commonly injured knee ligament in BJJ.",
+      "how": ["Knee forced inward while the foot is trapped: knee-cut passes, someone falling on the outside of your leg, tangled takedowns", "Twisting out of half guard or a leg entanglement", "Forcing a sweep with the knee collapsed in"],
+      "symptoms": ["Pain on the inner side of the knee, sore to press", "Pain when the knee is pushed inward or when you squeeze your knees together", "Mild swelling and stiffness; the knee may feel loose in worse sprains"],
+      "red_flags": ["A pop followed by fast swelling within hours", "The knee gives way or will not straighten fully (locking)", "You cannot put weight on it", "Clear looseness when the knee is pushed sideways"],
+      "weeks": {"mild": [1, 3], "moderate": [3, 8], "severe": [8, 16]},
+      "phases": [
+        {"name": "Calm it down", "window": "Days 1-7", "mat": "off", "goals": ["Settle pain and swelling", "Keep the knee moving", "Protect it from sideways force"], "work": [{"name": "Heel slides", "dose": "3 x 15, several times a day"}, {"name": "Quad sets (press knee into a towel)", "dose": "3 x 10, hold 5 s"}, {"name": "Straight leg raises", "dose": "3 x 12"}, {"name": "Easy stationary bike, low resistance", "dose": "10-15 min if pain-free"}], "progress_when": ["Walking without a limp", "Swelling is going down", "Knee bends past 110 degrees"]},
+        {"name": "Rebuild strength", "window": "Weeks 1-3", "mat": "solo", "goals": ["Full range of motion", "Strength in straight lines", "Single-leg control"], "work": [{"name": "Bodyweight squats to a box", "dose": "3 x 12"}, {"name": "Glute bridges, then single-leg", "dose": "3 x 12"}, {"name": "Step-ups", "dose": "3 x 10 each leg"}, {"name": "Side-lying hip abduction", "dose": "3 x 15"}, {"name": "Single-leg balance", "dose": "3 x 30 s"}], "progress_when": ["Full, pain-free bend and straighten", "Single-leg squat to a chair without the knee caving in", "No swelling the day after exercise"]},
+        {"name": "Load and side-to-side", "window": "Weeks 3-6", "mat": "drill", "goals": ["Tolerance to sideways and twisting load", "Return to cooperative drilling"], "work": [{"name": "Split squats or lunges, add weight", "dose": "3 x 8 each leg"}, {"name": "Lateral band walks", "dose": "3 x 12 steps each way"}, {"name": "Copenhagen plank, short lever", "dose": "3 x 15-20 s"}, {"name": "Lateral shuffles and gentle pivots", "dose": "5 x 20 s"}, {"name": "Solo shrimps, technical stand-ups, sit-outs", "dose": "5 min"}], "progress_when": ["Hop and land on the injured leg without pain", "Side lunges are pain-free", "Drilling causes no pain during or the next morning"]},
+        {"name": "Return to rolling", "window": "Weeks 5-8+", "mat": "positional", "goals": ["Positional rounds, then light rolls, then everything"], "work": [{"name": "Top-position rounds first (mount, side control)", "dose": "3-4 rounds at 60%"}, {"name": "Add guard play with partners you trust", "dose": "over 1-2 weeks"}, {"name": "Takedowns and leg entanglements last", "dose": "when everything else is easy"}], "progress_when": ["Two weeks of full drilling with no flare-up", "Strength within about 10% of the other leg", "You are not guarding the knee when you roll"]}
+      ],
+      "avoid": ["Knee-cut passing on the injured side early on", "Half guard bottom with the injured leg trapped", "Leg entanglements and heel hook exchanges", "Triangles and closed guard squeezing in the first weeks"],
+      "prevent": ["Tap to knee pressure early; knees give no warning", "Strengthen adductors and hamstrings (Copenhagen planks, Nordic curls)", "Do not spin against a trapped foot", "Keep the weight of big partners off the outside of a planted leg"]
+    },
+    {
+      "slug": "meniscus",
+      "name": "Meniscus Irritation or Tear",
+      "region": "knee",
+      "tagline": "The knee's shock-absorbing cartilage. Hates deep bending plus twisting.",
+      "how": ["Deep knee bend with rotation: lotus-style guards, rubber guard, sitting back on your heels", "Twisting on a planted foot in a scramble", "Heel hooks and toe holds that rotate the shin"],
+      "symptoms": ["Pain along the joint line, inner or outer", "Swelling that builds over a day", "Catching, clicking or a feeling that something is in the way", "Pain at the end of a deep squat"],
+      "red_flags": ["Knee locks and will not straighten", "Knee gives way repeatedly", "Large swelling within hours of the injury", "No improvement after 4-6 weeks of sensible rehab"],
+      "weeks": {"mild": [2, 6], "moderate": [6, 12], "severe": [12, 26]},
+      "phases": [
+        {"name": "Settle the joint", "window": "Weeks 0-2", "mat": "off", "goals": ["Reduce swelling", "Regain full straightening", "Wake up the quad"], "work": [{"name": "Heel props to regain full extension", "dose": "5 min, 3 times a day"}, {"name": "Quad sets and straight leg raises", "dose": "3 x 12"}, {"name": "Heel slides within comfort", "dose": "3 x 15"}, {"name": "Stationary bike, high seat", "dose": "10-20 min"}], "progress_when": ["Knee straightens fully", "Little or no swelling", "Walking normally"]},
+        {"name": "Strength without twisting", "window": "Weeks 2-6", "mat": "solo", "goals": ["Leg strength in a pain-free range", "No deep flexion under load yet"], "work": [{"name": "Box squats to 90 degrees", "dose": "3 x 10"}, {"name": "Romanian deadlifts", "dose": "3 x 10"}, {"name": "Leg press or step-ups", "dose": "3 x 10"}, {"name": "Hamstring curls", "dose": "3 x 12"}, {"name": "Calf raises", "dose": "3 x 15"}], "progress_when": ["Squat to 90 degrees with load, no pain", "No catching or swelling after sessions", "Single-leg balance for 45 s"]},
+        {"name": "Depth and rotation", "window": "Weeks 6-10", "mat": "drill", "goals": ["Gradually restore deep bend", "Introduce controlled rotation"], "work": [{"name": "Deeper squats, slowly increasing range", "dose": "3 x 8"}, {"name": "Single-leg squats to a box", "dose": "3 x 8"}, {"name": "Controlled pivots and carioca steps", "dose": "5 x 20 s"}, {"name": "Guard-retention solo drills, pain-free range", "dose": "5-10 min"}], "progress_when": ["Full squat without pain or catching", "Hopping and landing are comfortable", "Cooperative drilling causes no next-day swelling"]},
+        {"name": "Return to rolling", "window": "Weeks 10+", "mat": "light", "goals": ["Rounds with controlled partners, building to full"], "work": [{"name": "Flow rounds, top-heavy", "dose": "3-5 rounds"}, {"name": "Reintroduce your guards one at a time", "dose": "weekly"}], "progress_when": ["A month of training with no swelling or locking"]}
+      ],
+      "avoid": ["Sitting on your heels and seiza", "Rubber guard, lotus and deep De La Riva hooks", "Inverting under pressure", "Any rotational leg lock exchange"],
+      "prevent": ["Do not force flexibility your hips do not have; the knee pays for it", "Build hip rotation so the knee is not asked to twist", "Tap early to toe holds and heel hooks", "Keep leg strength up year-round"]
+    },
+    {
+      "slug": "acl-lcl",
+      "name": "ACL or LCL Injury",
+      "region": "knee",
+      "tagline": "The serious ones. Usually a pop, fast swelling and an unstable knee.",
+      "how": ["Heel hooks and reaping forces applied fast or not tapped to", "Takedowns that load a planted, twisted leg", "A partner landing across the knee"],
+      "symptoms": ["A pop at the moment of injury", "Swelling within a few hours", "The knee feels unstable or shifts when you turn", "LCL: pain and looseness on the outer side"],
+      "red_flags": ["Every suspected ACL or LCL injury needs a clinical exam and usually imaging", "Numbness, tingling or a cold foot is an emergency", "The knee buckles when walking"],
+      "weeks": {"mild": [4, 8], "moderate": [8, 16], "severe": [36, 52]},
+      "phases": [
+        {"name": "Get assessed", "window": "Week 0", "mat": "off", "goals": ["Diagnosis from a sports doctor or physio", "Control swelling, restore extension"], "work": [{"name": "Quad sets", "dose": "10 x 10 s, every 2 hours"}, {"name": "Heel props for full extension", "dose": "5 min, 3 times a day"}, {"name": "Ankle pumps", "dose": "20 reps hourly"}], "progress_when": ["You have a diagnosis and a plan", "Knee straightens fully", "Swelling is under control"]},
+        {"name": "Supervised strengthening", "window": "Weeks 1-12", "mat": "off", "goals": ["Follow your clinician's protocol", "Quad and hamstring strength, normal walking"], "work": [{"name": "Programme prescribed by your physio", "dose": "as prescribed"}, {"name": "Upper-body and core training that keeps the knee quiet", "dose": "3 sessions a week"}], "progress_when": ["Cleared by your clinician for running and agility"]},
+        {"name": "Sport preparation", "window": "Months 3-9", "mat": "solo", "goals": ["Strength within 10% of the other leg", "Jumping, landing and change of direction"], "work": [{"name": "Heavy single-leg strength work", "dose": "2-3 sessions a week"}, {"name": "Hop and landing progressions", "dose": "as prescribed"}, {"name": "Solo movement and upper-body-only drilling", "dose": "short sessions"}], "progress_when": ["Passed strength and hop testing", "Cleared for contact by your clinician"]},
+        {"name": "Graded return", "window": "Months 9-12", "mat": "positional", "goals": ["Drilling, then positional, then selected rolls"], "work": [{"name": "Positional rounds from top", "dose": "build over 4-6 weeks"}, {"name": "Guard and standing last", "dose": "with trusted partners"}], "progress_when": ["Full training without swelling, pain or instability"]}
+      ],
+      "avoid": ["Any rolling until cleared", "Leg entanglements for a long time after return", "Jumping guard, yours or anyone's onto you"],
+      "prevent": ["Tap to heel hooks on position, not on pain", "Never jump guard and do not let partners jump on you", "Hamstring and hip strength: Nordic curls, single-leg deadlifts", "Learn to fall and concede takedowns"]
+    },
+    {
+      "slug": "ac-joint",
+      "name": "AC Joint Sprain",
+      "region": "shoulder",
+      "tagline": "The bump on top of the shoulder. Usually from landing on it.",
+      "how": ["Falling straight onto the point of the shoulder in a takedown or sweep", "Being stacked or driven shoulder-first into the mat", "Posting on an outstretched arm"],
+      "symptoms": ["Pain right on top of the shoulder", "A visible step or bump in worse sprains", "Pain reaching across your chest or lifting overhead", "Painful to lie on that side"],
+      "red_flags": ["Obvious deformity or a large step at the collarbone", "Numbness or weakness down the arm", "Could not lift the arm at all after the fall"],
+      "weeks": {"mild": [1, 3], "moderate": [3, 8], "severe": [8, 16]},
+      "phases": [
+        {"name": "Protect", "window": "Days 1-7", "mat": "off", "goals": ["Let pain settle", "Keep elbow, wrist and neck moving"], "work": [{"name": "Pendulum swings", "dose": "2 min, 3 times a day"}, {"name": "Shoulder blade squeezes", "dose": "3 x 12"}, {"name": "Grip and elbow range of motion", "dose": "often"}], "progress_when": ["Resting pain is gone", "Arm lifts to shoulder height"]},
+        {"name": "Range and control", "window": "Weeks 1-3", "mat": "solo", "goals": ["Full pain-free range", "Shoulder blade control"], "work": [{"name": "Wall slides", "dose": "3 x 10"}, {"name": "Band external rotation, elbow at side", "dose": "3 x 15"}, {"name": "Band rows", "dose": "3 x 15"}, {"name": "Isometric presses into a wall", "dose": "5 x 10 s each direction"}], "progress_when": ["Full overhead reach", "Can reach across the chest with little pain"]},
+        {"name": "Strength", "window": "Weeks 3-6", "mat": "drill", "goals": ["Pushing and pulling strength", "Weight-bearing through the arm"], "work": [{"name": "Push-ups, incline first", "dose": "3 x 10"}, {"name": "Dumbbell rows", "dose": "3 x 10"}, {"name": "Landmine or dumbbell press", "dose": "3 x 8"}, {"name": "Bear crawls and posting drills", "dose": "4 x 20 s"}], "progress_when": ["Ten pain-free push-ups", "Can take weight on a posted arm", "Breakfalls on that side do not hurt"]},
+        {"name": "Return to rolling", "window": "Weeks 5-8", "mat": "positional", "goals": ["Ground work first, takedowns last"], "work": [{"name": "Rounds starting on the ground", "dose": "build weekly"}, {"name": "Breakfall practice before takedown rounds", "dose": "every session"}], "progress_when": ["Full training including takedowns with no pain the next day"]}
+      ],
+      "avoid": ["Takedown rounds and judo throws", "Being stacked", "Shoulder pressure from north-south and cross-face on that side"],
+      "prevent": ["Drill breakfalls until they are automatic", "Do not post a straight arm when you are thrown", "Build shoulder and upper-back strength"]
+    },
+    {
+      "slug": "rotator-cuff",
+      "name": "Rotator Cuff Strain",
+      "region": "shoulder",
+      "tagline": "The small muscles that hold the shoulder in its socket. Kimura territory.",
+      "how": ["Kimuras, americanas and omoplatas tapped to late", "Posting or framing with the arm away from the body under heavy load", "Repeated overhead gripping and pulling"],
+      "symptoms": ["Deep ache in the shoulder or outer upper arm", "Pain lifting the arm out to the side or rotating it", "Pain lying on that shoulder at night", "Weakness reaching behind your back"],
+      "red_flags": ["Sudden inability to lift the arm after an injury", "Pain at night that is not easing after two weeks", "Marked weakness compared with the other side", "Numbness or tingling down the arm"],
+      "weeks": {"mild": [2, 4], "moderate": [4, 12], "severe": [12, 26]},
+      "phases": [
+        {"name": "Settle", "window": "Weeks 0-1", "mat": "off", "goals": ["Reduce irritation without freezing the shoulder"], "work": [{"name": "Pendulum swings", "dose": "2 min, 3 times a day"}, {"name": "Isometric external and internal rotation into a wall", "dose": "5 x 10 s, gentle"}, {"name": "Shoulder blade retraction", "dose": "3 x 12"}], "progress_when": ["Night pain is easing", "Arm lifts to shoulder height comfortably"]},
+        {"name": "Cuff strength", "window": "Weeks 1-4", "mat": "solo", "goals": ["Full range", "Rotator cuff endurance"], "work": [{"name": "Band external rotation", "dose": "3 x 15"}, {"name": "Band internal rotation", "dose": "3 x 15"}, {"name": "Side-lying external rotation, light dumbbell", "dose": "3 x 12"}, {"name": "Prone Y-T-W raises", "dose": "2 x 8 each"}, {"name": "Wall slides", "dose": "3 x 10"}], "progress_when": ["Full range without a painful arc", "Rotation strength close to the other side"]},
+        {"name": "Load the shoulder", "window": "Weeks 4-8", "mat": "drill", "goals": ["Pressing, pulling and hanging strength", "Tolerance to grips and frames"], "work": [{"name": "Push-ups", "dose": "3 x 12"}, {"name": "Rows and pull-downs", "dose": "3 x 10"}, {"name": "Overhead press, light and strict", "dose": "3 x 8"}, {"name": "Dead hangs", "dose": "3 x 20 s"}, {"name": "Cooperative drilling, no shoulder locks", "dose": "normal class drilling"}], "progress_when": ["Overhead press and hanging are pain-free", "Drilling causes no ache that night"]},
+        {"name": "Return to rolling", "window": "Weeks 6-12", "mat": "light", "goals": ["Rolling with an agreement on shoulder locks"], "work": [{"name": "Rounds where partners catch and release kimuras", "dose": "2-3 weeks"}, {"name": "Full rolling", "dose": "when the above is easy"}], "progress_when": ["Full rounds with no pain after"]}
+      ],
+      "avoid": ["Fighting kimuras and americanas with the arm away from your body", "Stiff-arm frames under heavy top pressure", "Overhead lifting through pain"],
+      "prevent": ["Tap to shoulder locks early; they tear before they hurt much", "Frame with forearms and structure, not a pushing arm", "Two short sets of band external rotations before training"]
+    },
+    {
+      "slug": "shoulder-instability",
+      "name": "Shoulder Subluxation or Dislocation",
+      "region": "shoulder",
+      "tagline": "The joint slipped part-way or all the way out. Take this one seriously.",
+      "how": ["Arm forced up and back: posting behind you, whizzer fights, armdrags resisted badly", "Kimura with the elbow lifted away", "Falling on an outstretched arm"],
+      "symptoms": ["A feeling of the shoulder sliding out and back in", "Dead-arm sensation", "Fear or pain with the arm up and rotated out", "Dislocation: obvious deformity and severe pain"],
+      "red_flags": ["A shoulder that stays out needs emergency care; do not let a team-mate put it back", "A first dislocation needs imaging", "Numbness over the outer shoulder or weakness lifting the arm", "Repeated episodes: see an orthopaedic specialist"],
+      "weeks": {"mild": [3, 6], "moderate": [8, 12], "severe": [16, 26]},
+      "phases": [
+        {"name": "Protect and assess", "window": "Weeks 0-2", "mat": "off", "goals": ["Medical assessment", "Rest in a sling if advised", "Keep hand and elbow moving"], "work": [{"name": "Grip squeezes, elbow and wrist movement", "dose": "often"}, {"name": "Gentle isometrics with the arm at your side", "dose": "5 x 10 s"}], "progress_when": ["Cleared to start moving the shoulder", "Resting pain is gone"]},
+        {"name": "Controlled range", "window": "Weeks 2-6", "mat": "off", "goals": ["Regain range without stressing the front of the joint"], "work": [{"name": "Assisted flexion with a stick", "dose": "3 x 10"}, {"name": "Band rotation, elbow tucked", "dose": "3 x 15"}, {"name": "Shoulder blade setting and rows", "dose": "3 x 12"}], "progress_when": ["Near-full range below shoulder height", "No feeling of slipping in daily life"]},
+        {"name": "Stability strength", "window": "Weeks 6-12", "mat": "solo", "goals": ["Strong cuff and shoulder blade muscles", "Weight-bearing confidence"], "work": [{"name": "Rotation at 90 degrees, light band", "dose": "3 x 12"}, {"name": "Push-up plus, plank shoulder taps", "dose": "3 x 10"}, {"name": "Bottoms-up kettlebell carries", "dose": "4 x 20 m"}, {"name": "Rows, face pulls", "dose": "3 x 12"}], "progress_when": ["No apprehension with the arm up and out", "Strength close to the other side"]},
+        {"name": "Graded contact", "window": "Weeks 12+", "mat": "drill", "goals": ["Drilling, then positional, then rolling"], "work": [{"name": "Cooperative drilling", "dose": "2-3 weeks"}, {"name": "Positional rounds from top", "dose": "2-3 weeks"}, {"name": "Rolling with trusted partners", "dose": "build up"}], "progress_when": ["Full training with no slipping and no fear"]}
+      ],
+      "avoid": ["Posting an arm behind you", "Whizzer and overhook battles on that side", "Fighting kimuras", "Overhead pressing behind the neck"],
+      "prevent": ["Keep elbows close; arms away from the body are levers for your partner", "Year-round cuff and shoulder blade strength", "Tap as soon as the arm is isolated behind you"]
+    },
+    {
+      "slug": "elbow-hyperextension",
+      "name": "Elbow Hyperextension (Armbar Elbow)",
+      "region": "elbow",
+      "tagline": "The armbar you tapped to late.",
+      "how": ["Armbars finished fast or resisted too long", "Posting a straight arm when falling", "Getting stacked on a locked arm"],
+      "symptoms": ["Pain at the front or inner side of the elbow", "Cannot fully straighten or bend without pain", "Swelling and stiffness the next morning", "Weak, sore grip"],
+      "red_flags": ["A pop with immediate swelling or bruising", "The elbow feels loose or shifts", "Numbness or tingling in the ring and little fingers", "Cannot straighten after two weeks"],
+      "weeks": {"mild": [1, 3], "moderate": [3, 6], "severe": [8, 16]},
+      "phases": [
+        {"name": "Settle", "window": "Days 1-7", "mat": "off", "goals": ["Reduce swelling", "Gentle movement inside the pain-free range"], "work": [{"name": "Elbow bend and straighten, short of pain", "dose": "3 x 15, several times a day"}, {"name": "Forearm rotation, palm up and down", "dose": "3 x 15"}, {"name": "Soft ball squeezes", "dose": "3 x 15"}], "progress_when": ["Swelling is down", "Nearly full bend and straighten"]},
+        {"name": "Strengthen in mid-range", "window": "Weeks 1-3", "mat": "solo", "goals": ["Biceps, triceps and forearm strength without end-range stress"], "work": [{"name": "Isometric biceps holds at 90 degrees", "dose": "5 x 15 s"}, {"name": "Light hammer curls", "dose": "3 x 12"}, {"name": "Band triceps press-downs", "dose": "3 x 15"}, {"name": "Wrist curls and reverse curls", "dose": "3 x 15"}], "progress_when": ["Full range with only mild end-range discomfort", "Daily tasks are pain-free"]},
+        {"name": "Load the lock-out", "window": "Weeks 3-5", "mat": "drill", "goals": ["Strength at full extension", "Weight-bearing"], "work": [{"name": "Push-ups, incline to floor", "dose": "3 x 10"}, {"name": "Rows and pull-ups or hangs", "dose": "3 x 8"}, {"name": "Farmer carries", "dose": "4 x 30 m"}, {"name": "Cooperative drilling, no armbars on that side", "dose": "normal class drilling"}], "progress_when": ["Push-ups and hanging are pain-free", "Grip strength is back"]},
+        {"name": "Return to rolling", "window": "Weeks 4-8", "mat": "light", "goals": ["Rolling with early taps"], "work": [{"name": "Rounds where you tap to any armbar position", "dose": "2 weeks"}, {"name": "Full rolling", "dose": "after that"}], "progress_when": ["Full training with no ache the next day"]}
+      ],
+      "avoid": ["Posting on a straight arm", "Armbar escapes that rely on resisting the extension", "Heavy grip fighting early on"],
+      "prevent": ["Tap when the arm is isolated and your thumb turns up, not when it hurts", "Keep elbows bent and tight to your ribs", "Learn the hitchhiker and stack escapes so you stop holding on with strength"]
+    },
+    {
+      "slug": "grapplers-elbow",
+      "name": "Grappler's Elbow (Tendon Overload)",
+      "region": "elbow",
+      "tagline": "Golfer's or tennis elbow from thousands of grips.",
+      "how": ["Gi gripping volume: collar, sleeve and pant grips held too long", "Lots of pulling without enough recovery", "A sudden jump in training volume"],
+      "symptoms": ["Ache on the inner (golfer's) or outer (tennis) bony point of the elbow", "Pain when gripping, opening jars or shaking hands", "Stiff and sore in the morning, warms up, then aches after"],
+      "red_flags": ["Numbness or tingling into the hand", "Elbow locking or sudden sharp pain with a pop", "Pain at rest that does not ease after a few weeks of reduced gripping"],
+      "weeks": {"mild": [2, 6], "moderate": [6, 12], "severe": [12, 26]},
+      "phases": [
+        {"name": "Reduce the load", "window": "Weeks 0-2", "mat": "drill", "goals": ["Cut gripping volume, not all training", "Calm the tendon with isometrics"], "work": [{"name": "Isometric wrist flexion or extension holds", "dose": "5 x 30-45 s, daily"}, {"name": "No-gi or grip-light rounds instead of gi gripping", "dose": "swap sessions"}, {"name": "Forearm massage", "dose": "2-3 min"}], "progress_when": ["Morning pain 3/10 or less", "Isometric holds are comfortable"]},
+        {"name": "Slow heavy loading", "window": "Weeks 2-8", "mat": "positional", "goals": ["Tendon capacity through slow, heavy work"], "work": [{"name": "Eccentric wrist curls (3 s down)", "dose": "3 x 12, every other day"}, {"name": "Reverse wrist curls", "dose": "3 x 12"}, {"name": "Hammer rotations with a dumbbell", "dose": "3 x 10"}, {"name": "Farmer carries", "dose": "4 x 30 m"}], "progress_when": ["Loaded exercises are 3/10 pain or less and settle within a day", "Grip strength is returning"]},
+        {"name": "Back to full gripping", "window": "Weeks 8+", "mat": "full", "goals": ["Rebuild grip volume gradually"], "work": [{"name": "Towel or gi pull-ups", "dose": "3 x 5-8"}, {"name": "Add gi rounds back one at a time", "dose": "each week"}], "progress_when": ["A normal week of gi training with no next-day flare"]}
+      ],
+      "avoid": ["Death grips you refuse to let go of", "Back-to-back gi days with heavy grip fighting", "Complete rest; tendons need load to heal"],
+      "prevent": ["Let go of grips that are lost", "Mix gi and no-gi across the week", "Train finger and wrist extensors as well as flexors", "Increase weekly mat time by small steps"]
+    },
+    {
+      "slug": "finger-sprain",
+      "name": "Finger Sprain (Gi Fingers)",
+      "region": "hand",
+      "tagline": "Jammed, twisted and swollen knuckles from gripping.",
+      "how": ["Fingers caught in the gi when a partner rips a grip free", "Jamming a finger on the mat or a partner", "Years of hard pistol and spider grips"],
+      "symptoms": ["Swollen, stiff middle knuckle", "Pain gripping or making a fist", "Tender on the side of the joint"],
+      "red_flags": ["The finger is crooked or will not straighten", "You cannot bend or straighten the fingertip on its own", "Numbness in the finger", "Severe swelling and bruising right after injury"],
+      "weeks": {"mild": [1, 3], "moderate": [3, 8], "severe": [8, 12]},
+      "phases": [
+        {"name": "Protect", "window": "Days 1-7", "mat": "drill", "goals": ["Control swelling", "Keep the joint moving gently"], "work": [{"name": "Buddy-tape to the next finger", "dose": "for training and daily use"}, {"name": "Gentle make-a-fist and open", "dose": "10 reps hourly"}, {"name": "Tendon glides", "dose": "3 x 10"}], "progress_when": ["Swelling is going down", "You can nearly make a full fist"]},
+        {"name": "Restore grip", "window": "Weeks 1-4", "mat": "positional", "goals": ["Full range", "Grip and pinch strength"], "work": [{"name": "Putty or soft ball squeezes", "dose": "3 x 15"}, {"name": "Rubber-band finger extensions", "dose": "3 x 15"}, {"name": "Rice bucket work", "dose": "2-3 min"}], "progress_when": ["Full fist", "Gripping a gi is uncomfortable but not painful"]},
+        {"name": "Full gripping", "window": "Weeks 3-8", "mat": "full", "goals": ["Back to gi gripping, taped as needed"], "work": [{"name": "Tape the joint for gi sessions", "dose": "as needed"}, {"name": "Dead hangs", "dose": "3 x 20 s"}], "progress_when": ["Gi rounds do not flare the joint"]}
+      ],
+      "avoid": ["Spider and lasso guards while it is swollen", "Hanging on to grips being stripped", "Cracking or yanking the finger"],
+      "prevent": ["Release grips before they are ripped out", "Tape vulnerable joints for gi training", "Keep fingers together when posting", "Train finger extensors"]
+    },
+    {
+      "slug": "wrist-sprain",
+      "name": "Wrist Sprain",
+      "region": "hand",
+      "tagline": "From posting on a bent-back hand or a wrist lock.",
+      "how": ["Catching your weight on an outstretched hand", "Wrist locks tapped to late", "Collapsing on a posted hand during a sweep"],
+      "symptoms": ["Pain bending the wrist back or loading it", "Swelling over the back or thumb side", "Weak, painful grip"],
+      "red_flags": ["Pain in the hollow at the base of the thumb; scaphoid fractures are easy to miss", "Obvious deformity or severe swelling", "Numbness or tingling in the fingers", "Not improving after two weeks"],
+      "weeks": {"mild": [1, 3], "moderate": [3, 6], "severe": [8, 12]},
+      "phases": [
+        {"name": "Settle", "window": "Days 1-7", "mat": "solo", "goals": ["Reduce swelling", "Pain-free movement"], "work": [{"name": "Wrist circles and flexion/extension, pain-free", "dose": "3 x 15"}, {"name": "Tendon glides and fist pumps", "dose": "3 x 15"}, {"name": "Support with tape or a brace", "dose": "for daily tasks"}], "progress_when": ["Swelling is down", "Most of your range is back"]},
+        {"name": "Strength", "window": "Weeks 1-3", "mat": "drill", "goals": ["Forearm strength and stability"], "work": [{"name": "Wrist curls and reverse curls", "dose": "3 x 15"}, {"name": "Radial and ulnar deviation with a hammer", "dose": "3 x 12"}, {"name": "Grip squeezes", "dose": "3 x 15"}], "progress_when": ["Full range", "Grip close to the other side"]},
+        {"name": "Weight-bearing", "window": "Weeks 3-6", "mat": "positional", "goals": ["Posting and pushing through the hand"], "work": [{"name": "Quadruped rocking on palms", "dose": "3 x 30 s"}, {"name": "Push-ups on fists, then palms", "dose": "3 x 10"}, {"name": "Bear crawls", "dose": "4 x 20 s"}], "progress_when": ["Push-ups and posting are pain-free"]}
+      ],
+      "avoid": ["Posting on a flat hand; use a fist or forearm", "Wrist-lock exchanges", "Push-ups on palms early"],
+      "prevent": ["Post on your forearm or elbow when swept", "Strengthen wrists in all directions", "Tap to wrist locks at once; they come on fast"]
+    },
+    {
+      "slug": "neck-strain",
+      "name": "Neck Strain",
+      "region": "neck",
+      "tagline": "Stacked, cranked or guillotined.",
+      "how": ["Being stacked while defending triangles or playing inverted guard", "Guillotines, can-openers and neck cranks", "Bridging on your head; driving in with a bad takedown posture"],
+      "symptoms": ["Stiff, sore neck, worse turning or looking down", "Muscle spasm into the shoulders", "A headache at the base of the skull"],
+      "red_flags": ["Numbness, tingling or weakness in an arm or hand", "Pain shooting down the arm", "Severe pain after a fall or hard crank, especially in the midline", "Dizziness, double vision, trouble swallowing or loss of balance", "Any loss of bladder or bowel control: emergency"],
+      "weeks": {"mild": [1, 2], "moderate": [2, 6], "severe": [6, 12]},
+      "phases": [
+        {"name": "Keep it moving", "window": "Days 1-5", "mat": "off", "goals": ["Ease spasm", "Avoid stiffening up"], "work": [{"name": "Gentle rotations and side bends in the pain-free range", "dose": "10 each way, hourly"}, {"name": "Chin tucks", "dose": "3 x 10"}, {"name": "Shoulder rolls and upper-back mobility", "dose": "often"}, {"name": "Heat", "dose": "15 min as needed"}], "progress_when": ["Turning the head is at least 75% of normal", "No arm symptoms"]},
+        {"name": "Isometric strength", "window": "Weeks 1-3", "mat": "solo", "goals": ["Neck strength in all directions without movement"], "work": [{"name": "Isometric holds against your hand: front, back, both sides", "dose": "5 x 10 s each"}, {"name": "Chin tuck with head lift, lying down", "dose": "3 x 10"}, {"name": "Band rows and face pulls", "dose": "3 x 15"}], "progress_when": ["Full, pain-free range", "Isometrics feel strong and symmetrical"]},
+        {"name": "Load and drilling", "window": "Weeks 2-5", "mat": "drill", "goals": ["Dynamic neck strength", "Cooperative drilling"], "work": [{"name": "Band-resisted neck movements", "dose": "3 x 12"}, {"name": "Shrugs and farmer carries", "dose": "3 x 10"}, {"name": "Front and back bridges with hand support", "dose": "3 x 20 s"}, {"name": "Drilling without head pressure", "dose": "normal class drilling"}], "progress_when": ["Drilling causes no stiffness the next day"]},
+        {"name": "Return to rolling", "window": "Weeks 3-8", "mat": "light", "goals": ["Rolling with no stacking and no neck attacks at first"], "work": [{"name": "Rounds with a no-neck agreement", "dose": "1-2 weeks"}, {"name": "Full rolling", "dose": "after that"}], "progress_when": ["Full rounds with no symptoms"]}
+      ],
+      "avoid": ["Inverting and being stacked", "Fighting guillotines with your neck instead of your hands and posture", "Bridging on your head", "Shooting takedowns with your head down"],
+      "prevent": ["Train the neck directly twice a week", "Tap to neck cranks; they are not toughness tests", "When stacked, turn onto a shoulder and get your hips back down", "Head up, back straight on every shot"]
+    },
+    {
+      "slug": "lower-back-strain",
+      "name": "Lower Back Strain",
+      "region": "back",
+      "tagline": "From stacking, lifting people and living in rounded positions.",
+      "how": ["Being stacked or folded in guard", "Lifting a partner with a rounded back to break guard or finish a takedown", "Long periods rounded in closed guard or turtle", "Twisting under load"],
+      "symptoms": ["Ache or tightness across the lower back", "Spasm and stiffness, worse in the morning or after sitting", "Pain bending forward or arching back"],
+      "red_flags": ["Pain, numbness or tingling below the knee", "Weakness in a leg or a foot that drags", "Numbness around the groin or saddle area, or any change in bladder or bowel control: emergency", "Pain after a heavy fall, or constant night pain"],
+      "weeks": {"mild": [1, 2], "moderate": [2, 6], "severe": [6, 12]},
+      "phases": [
+        {"name": "Stay moving", "window": "Days 1-5", "mat": "off", "goals": ["Settle spasm", "Walk; do not lie in bed"], "work": [{"name": "Walking", "dose": "10-20 min, 2-3 times a day"}, {"name": "Cat-camel", "dose": "2 x 10"}, {"name": "Lying knee rocks side to side", "dose": "2 x 10"}, {"name": "Prone press-ups if they feel good", "dose": "2 x 10"}], "progress_when": ["Walking and sitting are comfortable", "You can bend to put on socks"]},
+        {"name": "Core endurance", "window": "Weeks 1-3", "mat": "solo", "goals": ["Trunk stiffness and control", "Hip mobility"], "work": [{"name": "Bird-dog", "dose": "3 x 8 each side, 5 s holds"}, {"name": "Side plank", "dose": "3 x 20-30 s"}, {"name": "Modified curl-up", "dose": "3 x 8, 5 s holds"}, {"name": "Glute bridges", "dose": "3 x 12"}, {"name": "Hip flexor and hip rotation stretches", "dose": "2 x 45 s"}], "progress_when": ["Core work is pain-free", "Forward bend is close to normal"]},
+        {"name": "Hinge and lift", "window": "Weeks 2-5", "mat": "drill", "goals": ["Strong hip hinge", "Return to drilling"], "work": [{"name": "Romanian deadlifts, light and strict", "dose": "3 x 10"}, {"name": "Goblet squats", "dose": "3 x 10"}, {"name": "Loaded carries", "dose": "4 x 30 m"}, {"name": "Solo shrimps and bridges", "dose": "5 min"}, {"name": "Cooperative drilling, no stacking", "dose": "normal class drilling"}], "progress_when": ["Lifting and drilling leave no next-day stiffness"]},
+        {"name": "Return to rolling", "window": "Weeks 3-8", "mat": "positional", "goals": ["Top positions first, guard and standing later"], "work": [{"name": "Top-only rounds", "dose": "1 week"}, {"name": "Add guard, then standing", "dose": "weekly"}], "progress_when": ["A normal training week with no flare"]}
+      ],
+      "avoid": ["Being stacked; open your guard instead of holding on", "Standing guard breaks with a rounded back", "Deep inversions", "Long drives right after hard sessions without moving around"],
+      "prevent": ["Hinge at the hips when you lift anyone", "Core endurance work twice a week", "Keep hips mobile so the back does not have to round", "Warm up properly before rolling"]
+    },
+    {
+      "slug": "rib-injury",
+      "name": "Rib or Rib-Cartilage Injury",
+      "region": "ribs",
+      "tagline": "The popped rib. Hurts to breathe, laugh and train.",
+      "how": ["Knee-on-belly and heavy pressure on the ribcage", "Twisting hard under a pin or during a scramble", "A knee or elbow landing on your side", "Body triangles squeezed across the floating ribs"],
+      "symptoms": ["Sharp, pin-point pain at the side or front of the ribcage", "Worse with deep breaths, coughing, sneezing, twisting or sitting up", "Sometimes a pop or click at the time", "Tender to press"],
+      "red_flags": ["Shortness of breath or breathing that is getting harder", "Coughing blood", "Severe pain after a heavy impact", "Fever or a cough that develops afterwards", "Pain in the lower left ribs with left shoulder-tip pain"],
+      "weeks": {"mild": [2, 4], "moderate": [4, 8], "severe": [8, 12]},
+      "phases": [
+        {"name": "Breathe and wait", "window": "Weeks 0-2", "mat": "off", "goals": ["Let the tissue knit", "Keep the lungs working fully"], "work": [{"name": "Slow deep breaths to full expansion", "dose": "10 breaths every hour"}, {"name": "Walking", "dose": "20-30 min daily"}, {"name": "Sleep propped up if lying flat hurts", "dose": "as needed"}], "progress_when": ["Deep breaths and coughing are tolerable", "You can get out of bed without bracing"]},
+        {"name": "Gentle movement", "window": "Weeks 2-4", "mat": "solo", "goals": ["Restore trunk rotation", "Light conditioning"], "work": [{"name": "Open-book thoracic rotations", "dose": "2 x 10 each side"}, {"name": "Cat-camel", "dose": "2 x 10"}, {"name": "Dead bug", "dose": "3 x 8 each side"}, {"name": "Stationary bike or brisk walking", "dose": "20-30 min"}], "progress_when": ["Rotation and side-bending are nearly pain-free", "No pain with a sneeze"]},
+        {"name": "Core and drilling", "window": "Weeks 4-6", "mat": "drill", "goals": ["Trunk strength", "Drilling without chest pressure"], "work": [{"name": "Plank and side plank", "dose": "3 x 30 s"}, {"name": "Pallof press", "dose": "3 x 10 each side"}, {"name": "Push-ups and rows", "dose": "3 x 10"}, {"name": "Drilling from top positions", "dose": "normal class drilling"}], "progress_when": ["Sit-ups and shrimping are pain-free", "Pressing on the spot is only mildly tender"]},
+        {"name": "Return to rolling", "window": "Weeks 6-10", "mat": "positional", "goals": ["Top first, bottom last"], "work": [{"name": "Top-only positional rounds", "dose": "1-2 weeks"}, {"name": "Light rounds with smaller partners", "dose": "1-2 weeks"}, {"name": "Full rolling", "dose": "when pressure on the ribs is fine"}], "progress_when": ["You can take knee-on-belly without pain"]}
+      ],
+      "avoid": ["Any bottom position under pressure until late", "Rolling with much heavier partners", "Coming back early; re-injury restarts the clock", "Strapping the chest tightly for days"],
+      "prevent": ["Frame early so pressure never settles on your ribs", "Do not twist explosively under a heavy pin", "Tap to body triangles and crushing pressure", "Trunk rotation strength: Pallof presses, side planks"]
+    },
+    {
+      "slug": "ankle-sprain",
+      "name": "Ankle Sprain",
+      "region": "ankle_foot",
+      "tagline": "Rolled in a scramble or caught in a foot lock.",
+      "how": ["Rolling the ankle while standing, in takedowns or on mat edges", "Straight ankle locks and toe holds tapped to late", "A foot caught under you when sitting back"],
+      "symptoms": ["Pain and swelling on the outer ankle, sometimes bruising", "Hurts to walk or push off", "Stiff and weak; may feel unstable"],
+      "red_flags": ["You cannot take four steps", "Tender on the bone at the back edge of either ankle bone or the outer midfoot", "Obvious deformity", "Numbness in the foot", "Pain high above the ankle between the shin bones"],
+      "weeks": {"mild": [1, 2], "moderate": [3, 6], "severe": [8, 12]},
+      "phases": [
+        {"name": "Settle and move", "window": "Days 1-5", "mat": "off", "goals": ["Control swelling", "Early pain-free movement"], "work": [{"name": "Ankle alphabet", "dose": "3 times a day"}, {"name": "Ankle pumps", "dose": "20 reps hourly"}, {"name": "Elevation and compression", "dose": "as needed"}, {"name": "Walk as pain allows", "dose": "short and often"}], "progress_when": ["Walking with little or no limp", "Swelling is going down"]},
+        {"name": "Strength and balance", "window": "Weeks 1-3", "mat": "solo", "goals": ["Calf and ankle strength", "Balance"], "work": [{"name": "Band work in four directions", "dose": "3 x 15 each"}, {"name": "Calf raises, two legs then one", "dose": "3 x 15"}, {"name": "Single-leg balance, eyes open then closed", "dose": "3 x 30 s"}, {"name": "Knee-to-wall ankle mobility", "dose": "2 x 10"}], "progress_when": ["20 single-leg calf raises", "Balance for 30 s with eyes closed"]},
+        {"name": "Dynamic", "window": "Weeks 2-5", "mat": "drill", "goals": ["Hopping, cutting, mat movement"], "work": [{"name": "Hops forward, sideways, single leg", "dose": "3 x 10"}, {"name": "Lateral shuffles and stance work", "dose": "5 x 20 s"}, {"name": "Technical stand-ups and sit-outs", "dose": "5 min"}, {"name": "Drilling, tape the ankle if it helps", "dose": "normal class drilling"}], "progress_when": ["Single-leg hops are pain-free and feel stable"]},
+        {"name": "Return to rolling", "window": "Weeks 3-8", "mat": "light", "goals": ["Ground first, then standing; foot locks last"], "work": [{"name": "Rounds starting on the ground", "dose": "1-2 weeks"}, {"name": "Takedowns", "dose": "after that"}], "progress_when": ["Standing rounds with no pain or giving way"]}
+      ],
+      "avoid": ["Takedown rounds until hopping is solid", "Foot lock exchanges on that leg", "Sitting back on your heels", "Stopping rehab when the pain goes; balance is what prevents the next one"],
+      "prevent": ["Keep doing single-leg balance work", "Tap to ankle locks early and do not spin against toe holds", "Watch mat gaps and edges", "Strong calves"]
+    },
+    {
+      "slug": "turf-toe",
+      "name": "Toe Sprain (Turf Toe)",
+      "region": "ankle_foot",
+      "tagline": "Big toe bent back too far or caught in the mat.",
+      "how": ["Driving off the toes in a shot or pass with the toe bent back", "Toes catching on the mat or in a gi", "A partner landing on your heel while your toes are planted"],
+      "symptoms": ["Pain and swelling at the base of the big toe", "Hurts to push off, sprint or kneel on your toes", "Stiff joint"],
+      "red_flags": ["Toe looks out of place", "You cannot put weight on the forefoot", "Heavy bruising under the toe", "Not improving after 2-3 weeks"],
+      "weeks": {"mild": [1, 2], "moderate": [2, 6], "severe": [6, 12]},
+      "phases": [
+        {"name": "Protect", "window": "Days 1-7", "mat": "solo", "goals": ["Limit toe bend", "Reduce swelling"], "work": [{"name": "Tape the big toe to limit backward bend", "dose": "daily"}, {"name": "Stiff-soled shoes off the mat", "dose": "daily"}, {"name": "Gentle toe curls", "dose": "3 x 15"}], "progress_when": ["Walking is comfortable", "Swelling is going down"]},
+        {"name": "Mobility and strength", "window": "Weeks 1-3", "mat": "drill", "goals": ["Restore toe extension gradually", "Foot strength"], "work": [{"name": "Towel scrunches", "dose": "3 x 15"}, {"name": "Calf raises, slow", "dose": "3 x 12"}, {"name": "Gentle toe extension stretch", "dose": "3 x 30 s"}, {"name": "Drill with the toe taped", "dose": "normal class drilling"}], "progress_when": ["Calf raises on that foot are pain-free", "Kneeling on your toes is tolerable"]},
+        {"name": "Push-off", "window": "Weeks 3-6", "mat": "light", "goals": ["Explosive push-off", "Rolling with tape"], "work": [{"name": "Hops and short sprints", "dose": "5 x 10 m"}, {"name": "Shot entries, slow then fast", "dose": "3 x 8"}], "progress_when": ["Driving off the toe is pain-free"]}
+      ],
+      "avoid": ["Combat base and shots on that foot early", "Passing on your toes", "Training untaped"],
+      "prevent": ["Keep toes active, not dragging, when you move", "Tape toes that have been injured before", "Calf and foot strength"]
+    },
+    {
+      "slug": "groin-strain",
+      "name": "Groin or Hip Flexor Strain",
+      "region": "hip",
+      "tagline": "From squeezing guards, wide bases and being split open.",
+      "how": ["Squeezing closed guard or triangles hard for a long time", "Legs forced apart: banana split, leg drags, wide base in passing", "Explosive bridging or shooting without a warm-up"],
+      "symptoms": ["Pain high on the inner thigh or at the front of the hip", "Hurts to squeeze the knees together or lift the knee", "Tight and sore after sitting"],
+      "red_flags": ["A pop with bruising down the inner thigh", "Deep groin pain with clicking or locking of the hip", "Pain with coughing or sneezing low in the abdomen", "Not improving after 3-4 weeks"],
+      "weeks": {"mild": [1, 3], "moderate": [3, 8], "severe": [8, 16]},
+      "phases": [
+        {"name": "Settle", "window": "Days 1-7", "mat": "off", "goals": ["Pain-free walking", "Gentle activation"], "work": [{"name": "Isometric ball squeeze between the knees, gentle", "dose": "5 x 10 s"}, {"name": "Glute bridges", "dose": "3 x 12"}, {"name": "Easy walking or bike", "dose": "15-20 min"}], "progress_when": ["Walking and stairs are pain-free", "A gentle squeeze does not hurt"]},
+        {"name": "Strengthen", "window": "Weeks 1-4", "mat": "solo", "goals": ["Adductor and hip flexor strength through range"], "work": [{"name": "Side-lying adduction lifts", "dose": "3 x 12"}, {"name": "Copenhagen plank, short lever", "dose": "3 x 15 s"}, {"name": "Standing band hip flexion", "dose": "3 x 12"}, {"name": "Lateral lunges, shallow", "dose": "3 x 8"}], "progress_when": ["A hard squeeze is pain-free", "Side lunges are comfortable"]},
+        {"name": "Load and drill", "window": "Weeks 3-6", "mat": "drill", "goals": ["Tolerance to stretch under load", "Guard work without squeezing"], "work": [{"name": "Copenhagen plank, long lever", "dose": "3 x 20 s"}, {"name": "Cossack squats", "dose": "3 x 8"}, {"name": "Hip mobility flow", "dose": "5 min"}, {"name": "Drilling with open guards", "dose": "normal class drilling"}], "progress_when": ["Drilling and full-range stretches are pain-free"]},
+        {"name": "Return to rolling", "window": "Weeks 5-10", "mat": "light", "goals": ["Rolling without closed guard at first"], "work": [{"name": "Rounds using open and half guard", "dose": "1-2 weeks"}, {"name": "Add closed guard and triangles", "dose": "after that"}], "progress_when": ["Full squeezing is pain-free the next day"]}
+      ],
+      "avoid": ["Holding closed guard or triangles with strength", "Aggressive stretching in the first two weeks", "Explosive shots"],
+      "prevent": ["Copenhagen planks once or twice a week all year", "Warm the hips up before rolling", "Open your guard and move instead of clamping"]
+    },
+    {
+      "slug": "cauliflower-ear",
+      "name": "Cauliflower Ear (Fresh)",
+      "region": "head",
+      "tagline": "A soft, swollen ear is a 48-hour problem. Act fast.",
+      "how": ["Friction and shearing: escaping headlocks, triangles and guillotines by pulling your head out", "Cross-face and head pressure", "Direct knocks to the ear"],
+      "symptoms": ["A soft, squishy, warm swelling on the outer ear", "Tender and throbbing", "The ear's folds look puffed out"],
+      "red_flags": ["Any fresh fluid-filled swelling: get it drained by a clinician within 24-48 hours, then compressed, or it hardens for good", "Increasing redness, heat, pus or fever", "Hearing change or severe pain"],
+      "weeks": {"mild": [1, 2], "moderate": [2, 3], "severe": [3, 6]},
+      "phases": [
+        {"name": "Drain and compress", "window": "Days 1-7", "mat": "off", "goals": ["Have it drained properly", "Keep it compressed so it does not refill"], "work": [{"name": "See a doctor for drainage", "dose": "within 24-48 hours"}, {"name": "Compression: clinician's dressing or ear magnets", "dose": "as directed, usually 5-7 days"}, {"name": "Keep it clean and dry", "dose": "daily"}], "progress_when": ["No refilling for 3-4 days", "No sign of infection"]},
+        {"name": "Protected training", "window": "Weeks 1-3", "mat": "drill", "goals": ["Train without friction on the ear"], "work": [{"name": "Wear ear guards for every session", "dose": "2-3 weeks minimum"}, {"name": "Drilling and positional work, no head squeezing", "dose": "normal class drilling"}], "progress_when": ["Ear is flat, firm and not tender"]},
+        {"name": "Back to rolling", "window": "Weeks 2-4", "mat": "full", "goals": ["Full rolling with ear guards while it settles"], "work": [{"name": "Keep ear guards on for hard rounds", "dose": "another 2-4 weeks"}], "progress_when": ["No swelling after hard rounds"]}
+      ],
+      "avoid": ["Draining it yourself; infection in ear cartilage is serious", "Rolling while it is filled or freshly drained", "Ripping your head out of chokes and triangles"],
+      "prevent": ["Wear ear guards when your ears are sore", "Escape with posture and angle, not by yanking your head free", "Ice a sore ear right after training"]
+    },
+    {
+      "slug": "skin-infection",
+      "name": "Skin Infection (Ringworm, Staph, Herpes)",
+      "region": "skin",
+      "tagline": "Not an injury, but the most common reason to stay off the mat.",
+      "how": ["Skin-to-skin contact with an infected partner", "Dirty mats, unwashed gear, shared towels", "Small cuts and mat burns that let bacteria in"],
+      "symptoms": ["Ringworm: red, scaly, itchy ring with a clearer centre", "Staph or impetigo: red, warm, painful bump or boil, or honey-coloured crusts", "Herpes gladiatorum: a cluster of small painful blisters, often on the face or neck, sometimes with fever"],
+      "red_flags": ["A hot, spreading red area, red streaks or fever: see a doctor the same day", "A boil that is growing or very painful", "Blisters near the eye", "Anything that has not improved after a week of treatment"],
+      "weeks": {"mild": [1, 2], "moderate": [2, 4], "severe": [4, 6]},
+      "phases": [
+        {"name": "Off the mat, get treated", "window": "From day 1", "mat": "off", "goals": ["Diagnosis and correct treatment", "Protect your team-mates"], "work": [{"name": "See a doctor or pharmacist; do not guess", "dose": "today"}, {"name": "Tell your coach", "dose": "today"}, {"name": "Wash all gear hot; disinfect bags and belts", "dose": "now"}, {"name": "Strength, conditioning and solo study at home", "dose": "keep your routine"}], "progress_when": ["Ringworm: at least 72 hours of antifungal treatment and the patch is clearly healing", "Bacterial: at least 72 hours of antibiotics, no new lesions for 48 hours, nothing moist or draining", "Herpes: all blisters dry and firmly crusted, on antiviral treatment as prescribed, no new blisters for 72 hours"]},
+        {"name": "Return", "window": "When cleared", "mat": "full", "goals": ["Back to training without spreading it"], "work": [{"name": "Finish the full course of treatment", "dose": "as prescribed"}, {"name": "Cover healing patches if your coach asks", "dose": "as needed"}], "progress_when": ["Skin fully healed"]}
+      ],
+      "avoid": ["Training with it covered up and hoping", "Sharing towels, razors or gear", "Stopping treatment when it looks better"],
+      "prevent": ["Shower straight after every session", "Fresh, clean gi or rashguard every time", "Cover cuts and mat burns", "Check your skin weekly and speak up early", "Do not walk barefoot off the mat and back on"]
+    },
+    {
+      "slug": "concussion",
+      "name": "Concussion",
+      "region": "head",
+      "tagline": "A brain injury. No toughing it out.",
+      "how": ["Head hitting the mat in a takedown or throw", "Accidental knee, elbow or head clash in a scramble", "Being slammed"],
+      "symptoms": ["Headache or pressure in the head", "Dizziness, balance problems, nausea", "Fogginess, slow thinking, poor memory of the event", "Sensitivity to light or noise", "Unusual tiredness, irritability or poor sleep"],
+      "red_flags": ["Go to emergency care for: loss of consciousness, repeated vomiting, a worsening headache, seizure, confusion that is increasing, slurred speech, weakness or numbness, unequal pupils, neck pain", "Any suspected concussion: stop training that day and see a doctor", "Symptoms lasting more than two weeks need specialist review"],
+      "weeks": {"mild": [2, 3], "moderate": [3, 6], "severe": [6, 12]},
+      "phases": [
+        {"name": "Relative rest", "window": "First 24-48 hours", "mat": "off", "goals": ["Rest body and brain; limit screens, no alcohol"], "work": [{"name": "Normal daily activity that does not worsen symptoms", "dose": "as tolerated"}, {"name": "Short walks", "dose": "10-15 min"}, {"name": "Regular sleep", "dose": "priority"}], "progress_when": ["Symptoms are settling", "A doctor has assessed you"]},
+        {"name": "Light aerobic activity", "window": "From day 2-3", "mat": "off", "goals": ["Raise heart rate without symptoms"], "work": [{"name": "Walking or stationary bike at easy pace", "dose": "15-20 min"}, {"name": "Each step lasts at least 24 hours; if symptoms return, drop back a step", "dose": "rule"}], "progress_when": ["No increase in symptoms during or after"]},
+        {"name": "Sport-specific movement", "window": "Step 3", "mat": "solo", "goals": ["Movement without head impact risk"], "work": [{"name": "Solo drills, shrimps, stand-ups, light bag or dummy work", "dose": "20-30 min"}, {"name": "Harder cardio intervals", "dose": "as tolerated"}], "progress_when": ["Symptom-free at rest and with exercise"]},
+        {"name": "Non-contact drilling", "window": "Step 4", "mat": "drill", "goals": ["Thinking and coordination under load"], "work": [{"name": "Cooperative drilling, no takedowns, no live rounds", "dose": "normal class drilling"}, {"name": "Strength training", "dose": "normal"}], "progress_when": ["Symptom-free", "Medical clearance for contact"]},
+        {"name": "Full contact", "window": "Step 5-6", "mat": "light", "goals": ["Controlled sparring, then normal training"], "work": [{"name": "Light rolls starting on the ground", "dose": "1 week"}, {"name": "Takedowns and hard rounds", "dose": "last"}], "progress_when": ["Normal training with no symptoms"]}
+      ],
+      "avoid": ["Training the same day, whatever you feel like", "Returning while any symptom remains", "A second knock before recovery; this is the dangerous one"],
+      "prevent": ["Breakfall skills", "Never slam and do not train with people who do", "Tuck your chin on every fall", "Build neck strength"]
+    }
+  ]
+}

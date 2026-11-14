@@ -1,20 +1,12 @@
-import json
-import os
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from ..database import get_db
-from .. import crud
+from .. import content, crud
 
 router = APIRouter(prefix="/api/tree", tags=["tree"])
 
-_TREE_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "config", "skill_tree.json"
-)
-
-
 def _load_tree() -> dict:
-    with open(os.path.abspath(_TREE_PATH), "r") as f:
-        return json.load(f)
+    return content.skill_tree()
 
 
 def _build_target_map(tree: dict) -> dict:

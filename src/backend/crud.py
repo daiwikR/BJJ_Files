@@ -1,15 +1,21 @@
 from sqlalchemy.orm import Session as DBSession
 from sqlalchemy import func, text
-from datetime import datetime, timezone
+from datetime import datetime, time, timezone
 from typing import List, Optional
 from . import models, schemas
 
 
 def create_session(db: DBSession, session_in: schemas.SessionIn) -> models.Session:
+    now = datetime.now()
+    when = now
+    if session_in.day and session_in.day != now.date():
+        when = datetime.combine(session_in.day, time(12, 0))
     session = models.Session(
+        date=when,
         gi_nogi=session_in.gi_nogi,
         session_type=session_in.session_type,
         duration_min=session_in.duration_min,
+        intensity=session_in.intensity,
         partner_weight=session_in.partner_weight,
         notes=session_in.notes,
     )
@@ -50,6 +56,19 @@ def _upsert_proficiency(db: DBSession, technique_id: str, position_id: str, reps
 
 def get_sessions(db: DBSession, limit: int = 50) -> List[models.Session]:
     return db.query(models.Session).order_by(models.Session.date.desc()).limit(limit).all()
+
+
+def delete_session(db: DBSession, session_id: int) -> bool:
+    session = db.get(models.Session, session_id)
+    if session is None:
+        return False
+    for log in session.technique_logs:
+        prof = db.query(models.Proficiency).filter_by(technique_id=log.technique_id).first()
+        if prof:
+            prof.total_reps = max(0, (prof.total_reps or 0) - (log.reps or 0))
+    db.delete(session)
+    db.commit()
+    return True
 
 
 def get_proficiency_all(db: DBSession) -> List[models.Proficiency]:

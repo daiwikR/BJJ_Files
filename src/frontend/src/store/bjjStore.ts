@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import axios from 'axios'
-import { TreeData, Session, Stats, DrillQueueItem, SessionIn } from '../types'
+import { TreeData, Session, Stats, DrillQueueItem } from '../types'
 
 interface BJJStore {
   treeData: TreeData | null
@@ -20,7 +20,6 @@ interface BJJStore {
   fetchSessions: () => Promise<void>
   fetchStats: () => Promise<void>
   fetchDrillQueue: () => Promise<void>
-  logSession: (session: SessionIn) => Promise<void>
   setSelectedNode: (id: string | null) => void
   setHoveredNode: (id: string | null) => void
   toggleLogForm: () => void
@@ -76,43 +75,6 @@ export const useBJJStore = create<BJJStore>((set, get) => ({
       const { data } = await axios.get<DrillQueueItem[]>('/api/tree/drill-queue')
       set({ drillQueue: data })
     } catch {/* silent */}
-  },
-
-  logSession: async (session: SessionIn) => {
-    set({ loading: true, error: null })
-    try {
-      const prevTree = get().treeData
-      await axios.post('/api/sessions', session)
-
-      // Refresh tree + check for milestone
-      const { data: newTree } = await axios.get<TreeData>('/api/tree')
-
-      // Detect level-up (proficiency crossed a 25% threshold)
-      let levelUpNode: string | null = null
-      if (prevTree) {
-        for (const newNode of newTree.nodes) {
-          const prevNode = prevTree.nodes.find(n => n.id === newNode.id)
-          if (prevNode) {
-            const thresholds = [25, 50, 75, 100]
-            for (const t of thresholds) {
-              if (prevNode.proficiency < t && newNode.proficiency >= t) {
-                levelUpNode = newNode.id
-                break
-              }
-            }
-          }
-        }
-      }
-
-      set({ treeData: newTree, loading: false, lastLevelUp: levelUpNode, showLogForm: false })
-
-      // Refresh secondary data
-      get().fetchSessions()
-      get().fetchStats()
-      get().fetchDrillQueue()
-    } catch {
-      set({ error: 'Failed to log session', loading: false })
-    }
   },
 
   setSelectedNode: (id) => set({ selectedNodeId: id }),

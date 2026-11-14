@@ -70,9 +70,7 @@ export default function SkillTreeCanvas() {
     return (
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
-          <div className="mb-3 text-5xl">🥋</div>
-          <p className="text-sm text-gray-400">Loading skill tree…</p>
-          <p className="mt-1 text-xs text-gray-600">Make sure the backend is running</p>
+          <p className="display text-3xl text-smoke">Loading the map…</p>
         </div>
       </div>
     )
@@ -109,17 +107,17 @@ export default function SkillTreeCanvas() {
             <defs>
               {/* Dot grid pattern */}
               <pattern id="dotgrid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                <circle cx="30" cy="30" r="1.2" fill="#1e1e50" opacity="0.7" />
+                <circle cx="30" cy="30" r="1.2" fill="#3b3b45" opacity="0.7" />
               </pattern>
               {/* Radial vignette */}
               <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
-                <stop offset="0%"  stopColor="#0a0a1c" stopOpacity="0" />
-                <stop offset="100%" stopColor="#020208" stopOpacity="0.8" />
+                <stop offset="0%"  stopColor="#0b0b0d" stopOpacity="0" />
+                <stop offset="100%" stopColor="#060607" stopOpacity="0.8" />
               </radialGradient>
             </defs>
 
             {/* ── Background ── */}
-            <rect width={SVG_W} height={SVG_H} fill="#080814" />
+            <rect width={SVG_W} height={SVG_H} fill="#0b0b0d" />
             <rect width={SVG_W} height={SVG_H} fill="url(#dotgrid)" />
             <rect width={SVG_W} height={SVG_H} fill="url(#vignette)" />
 
@@ -209,7 +207,7 @@ export default function SkillTreeCanvas() {
 
       {/* ── Controls hint ── */}
       <div className="absolute bottom-4 right-4 flex flex-col items-end gap-1">
-        <div className="rounded-lg border border-bjj-border bg-bjj-card/80 px-3 py-1.5 text-[10px] text-gray-500 backdrop-blur-sm">
+        <div className="num border border-ink-600 bg-ink-950/80 px-3 py-1.5 text-[10px] uppercase text-ash backdrop-blur-sm">
           Scroll to zoom · Drag to pan · Click node to inspect
         </div>
       </div>
@@ -217,9 +215,9 @@ export default function SkillTreeCanvas() {
       {/* ── Level-up toast ── */}
       <AnimatePresence>
         {lastLevelUp && nodeMap[lastLevelUp] && (
-          <div className="pointer-events-none absolute top-6 left-1/2 -translate-x-1/2 z-50">
+          <div className="pointer-events-none absolute top-24 left-1/2 -translate-x-1/2 z-50">
             <div
-              className="rounded-xl border px-5 py-2.5 text-sm font-bold shadow-2xl backdrop-blur-sm"
+              className="border px-5 py-2.5 font-cond text-lg font-bold uppercase tracking-wider shadow-2xl backdrop-blur-sm"
               style={{
                 borderColor: BRANCH_COLORS[nodeMap[lastLevelUp].branch],
                 background: `${BRANCH_COLORS[nodeMap[lastLevelUp].branch]}22`,

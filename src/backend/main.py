@@ -1,12 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .database import engine, Base
-from .routers import sessions, tree
 
-# Create all tables on startup
-Base.metadata.create_all(bind=engine)
+from . import seed
+from .routers import fuel, profile, recovery, sessions, tree
 
-app = FastAPI(title="BJJ Skill Tree API", version="1.0.0")
+# Create tables, patch older databases and seed the injury + food libraries.
+seed.run()
+
+app = FastAPI(title="OSS // BJJ Progress API", version="2.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -16,8 +17,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(sessions.router)
-app.include_router(tree.router)
+for r in (sessions.router, tree.router, profile.router, recovery.router, fuel.router):
+    app.include_router(r)
 
 
 @app.get("/api/health")
