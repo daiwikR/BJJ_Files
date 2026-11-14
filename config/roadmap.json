@@ -1,0 +1,614 @@
+{
+  "model": {
+    "baseline": "3 sessions a week x 90 min = 4.5 mat hours a week (about 225 hours a year).",
+    "rules": [
+      {
+        "id": "hours",
+        "title": "Mat hours",
+        "text": "Every stage has a mat-hour budget. Only logged time on the mat counts: class, drilling, sparring, open mat, competition. Hours beyond what a stage needs carry over to the next one."
+      },
+      {
+        "id": "calendar",
+        "title": "Calendar floor",
+        "text": "Skill needs sleep and repetition spread over time, so every stage also has a minimum number of weeks. For blue, purple and brown the floor is the IBJJF minimum time at that belt divided across the five stages. White has no IBJJF minimum, so the app uses its own floor of 6 weeks per stage."
+      },
+      {
+        "id": "skills",
+        "title": "Skills, not just attendance",
+        "text": "Each stage has a short checklist of things you should be able to do against a resisting partner of your own level. You need 80% of it ticked. You grade yourself, so be honest: ticking a box you cannot do live only hides the hole."
+      },
+      {
+        "id": "belt",
+        "title": "Stripes are automatic, belts are not",
+        "text": "Stripes are awarded by the app when all three gates are met. The fifth stage of every belt ends in BELT-READY, not a new belt. Belts are given by your coach, never claimed. When your coach promotes you, confirm it in the app and the next belt opens."
+      },
+      {
+        "id": "eta",
+        "title": "How the dates are projected",
+        "text": "Weekly hours = classes per day x days per week x class length. Weeks to finish a stage = the larger of (hours left / weekly hours) and (calendar floor left). Belt dates are also held back until the IBJJF minimum time at the belt has passed. Dates assume about 48 training weeks a year, since illness, travel and injury always take some."
+      }
+    ],
+    "sources": [
+      {
+        "title": "IBJJF General System of Graduation",
+        "url": "https://ibjjf.com/graduation-system",
+        "used_for": "Minimum time at blue (2 years), purple (18 months) and brown (1 year); no minimum at white; black belt minimum age 19; 3 years between the first black belt degrees."
+      },
+      {
+        "title": "Brazilian jiu-jitsu ranking system (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu_ranking_system",
+        "used_for": "Cross-check of belt order, stripes and minimum ages."
+      },
+      {
+        "title": "Gracie Barra: How long does it take to get your blue belt?",
+        "url": "https://graciebarra.com/gb-association-news/gb-student-question-how-long-does-it-take-to-get-your-blue-belt",
+        "used_for": "Typical 1-2 year white belt and the point that attendance alone does not earn the belt."
+      },
+      {
+        "title": "Saulo Ribeiro & Kevin Howell, Jiu-Jitsu University (Victory Belt, 2008)",
+        "url": "https://en.wikipedia.org/wiki/Saulo_Ribeiro",
+        "used_for": "The belt themes: white = survival, blue = escapes, purple = the guard, brown = guard passing, black = submissions."
+      },
+      {
+        "title": "John Danaher on the first two skills a white belt should learn",
+        "url": "https://sensobjj.com/blogs/graciemag-1/john-danaher-shares-the-first-2-skills-every-bjj-white-belt-should-learn",
+        "used_for": "Putting pin escapes and guard retention before everything else."
+      },
+      {
+        "title": "Roy Dean, Blue Belt Requirements",
+        "url": "https://bjjfanatics.com/products/blue-belt-requirements-2-0-by-roy-dean",
+        "used_for": "What a blue belt should be able to show: breakfalls, movement, escapes from mount and side control, basic sweeps, takedowns and finishes; purple as the belt where techniques become combinations."
+      },
+      {
+        "title": "Stephan Kesting, 10 pieces of advice for BJJ white belts",
+        "url": "https://www.grapplearts.com/10-pieces-of-advice-for-bjj-white-belts/",
+        "used_for": "Positional thinking and realistic expectations for the first year."
+      },
+      {
+        "title": "How often should you train BJJ (coach round-ups)",
+        "url": "https://letsroll.co/blog/how-often-train-bjj",
+        "used_for": "Weekly session ranges per belt and the consistency-over-intensity rule."
+      }
+    ],
+    "honesty": "The mat-hour budgets are this app's own model. No federation publishes hour requirements. They are set so that a baseline student lands inside the commonly reported ranges: about 1-2 years to blue, 2-4 at blue, 1.5-3 at purple, 1-2 at brown, roughly 8-12 years to black. Your coach's judgement always outranks this app."
+  },
+  "belts": [
+    {
+      "id": "white",
+      "name": "White Belt",
+      "color": "#ebe6dc",
+      "theme": "Survive",
+      "creed": "You are not here to win. You are here to stop losing so fast.",
+      "summary": "White belt is about becoming hard to hurt and hard to hold down. Saulo Ribeiro calls it the survival belt; John Danaher puts pin escapes and guard retention before any attack. Offence built on top of bad defence collapses the first time someone bigger sits on you.",
+      "hours_total": 300,
+      "ibjjf_min_months": 0,
+      "stage_floor_weeks": 6,
+      "typical_years": [1, 2],
+      "weekly_sessions": [2, 4],
+      "split": {"drill": 60, "positional": 25, "live": 15},
+      "stages": [
+        {
+          "key": "white-0",
+          "title": "Day One",
+          "focus": "Be safe, move right, know where you are.",
+          "hours": 40,
+          "why": "Before any technique works you need to fall without getting hurt, move your hips on the floor and recognise the position you are in. Most early injuries and most early frustration come from skipping this.",
+          "train": [
+            "Breakfalls, technical stand-up, shrimp, bridge, hip switch",
+            "The position ladder: guard, half guard, side control, mount, back",
+            "Posture inside closed guard",
+            "Survival posture under mount and side control: elbows tight, frames in, never flat",
+            "Tapping, releasing and rolling at a pace your partner can survive"
+          ],
+          "competencies": [
+            {"id": "tap", "text": "I tap early, and I let go the instant my partner taps."},
+            {"id": "move", "text": "I can shrimp, bridge and technical stand-up on both sides without thinking."},
+            {"id": "map", "text": "I can name the position I am in and say who is ahead."},
+            {"id": "posture", "text": "I can keep my posture in closed guard for 30 seconds against a white belt my size."},
+            {"id": "frames", "text": "Under mount or side control I get my elbows in and frames up before doing anything else."},
+            {"id": "calm", "text": "I can breathe through my nose and stay calm for a whole round on the bottom."}
+          ],
+          "rolling": "Count a round as a win if you kept your elbows in and never held your breath.",
+          "mistake": "Going 100% because you are scared. Strength hides bad technique for about three months, then you get injured or plateau."
+        },
+        {
+          "key": "white-1",
+          "title": "Escape Artist",
+          "focus": "Get out from under mount, side control and the back.",
+          "hours": 55,
+          "why": "You will spend most of this year underneath people. If you can reliably get out, rolling stops being frightening and you can afford to try things. This is the single highest-return skill in the first year.",
+          "train": [
+            "Mount: bridge-and-roll (upa) and elbow-knee escape, then combine them",
+            "Side control: frame, shrimp, re-guard; underhook and come to your knees",
+            "Back: hand-fight first, shoulders to the mat, escape to the underhook side",
+            "Headlock and scarf-hold escapes",
+            "Positional sparring that starts in the bad spot, every session you can"
+          ],
+          "competencies": [
+            {"id": "mount2", "text": "I have two mount escapes and I switch between them when the first one is blocked."},
+            {"id": "side2", "text": "I can recover guard from side control against a white belt my size most of the time."},
+            {"id": "back", "text": "From back control I protect my neck first, then escape, without panicking."},
+            {"id": "early", "text": "I start escaping as the pass finishes, not after the pin is settled."},
+            {"id": "noBench", "text": "I never bench-press someone off mount with straight arms."}
+          ],
+          "rolling": "Ask partners to start on top of you. Escapes per round is your score.",
+          "mistake": "Waiting until you are flattened before moving. The escape begins while they are still passing."
+        },
+        {
+          "key": "white-2",
+          "title": "Guard Keeper",
+          "focus": "Hold a guard, keep it, and threaten from it.",
+          "hours": 65,
+          "why": "Guard is what makes jiu-jitsu different from other grappling: fighting effectively from your back. Retention comes first, then a couple of sweeps and submissions so your partner has to respect you.",
+          "train": [
+            "Guard retention: knee-to-elbow connection, frames, hip escape to face them again",
+            "Closed guard: break their posture and control it",
+            "Two sweeps: scissor and hip bump",
+            "Two attacks that link: kimura and guillotine off the hip bump, or armbar and triangle",
+            "Half guard with a knee shield and an underhook as your safety net"
+          ],
+          "competencies": [
+            {"id": "retain", "text": "A white belt my size cannot pass my guard for a 3-minute round most of the time."},
+            {"id": "break", "text": "I can break posture in closed guard and hold it broken."},
+            {"id": "sweep2", "text": "I hit at least two different sweeps in live rolling."},
+            {"id": "chain", "text": "I can chain two attacks from guard when the first one is defended."},
+            {"id": "half", "text": "From half guard I get on my side with a knee shield or underhook, never flat."}
+          ],
+          "rolling": "Play guard on purpose. Pull guard, get passed, learn why.",
+          "mistake": "Hugging closed guard and stalling. If their posture is broken and you are not attacking, you are just resting."
+        },
+        {
+          "key": "white-3",
+          "title": "Top Pressure",
+          "focus": "Get on top, pass, and stay there.",
+          "hours": 65,
+          "why": "Now that you can survive and play guard, you learn the other half: opening a guard, passing it and holding a pin. Position before submission is the rule that keeps you from giving away everything you just earned.",
+          "train": [
+            "Posture and one reliable closed guard break",
+            "Two passes: knee slice and toreando",
+            "Holding side control and mount with hips and head position, not grip strength",
+            "Transitions: side control to knee-on-belly to mount",
+            "One takedown and one clean guard pull so every round can start standing"
+          ],
+          "competencies": [
+            {"id": "open", "text": "I can open a closed guard without getting swept or submitted most of the time."},
+            {"id": "pass2", "text": "I have two passes that work on white belts my size."},
+            {"id": "hold", "text": "I can hold side control or mount for 30 seconds against a white belt trying to escape."},
+            {"id": "advance", "text": "I move from side control to mount without giving guard back."},
+            {"id": "stand", "text": "I have one takedown or guard pull I am willing to use in live rounds."}
+          ],
+          "rolling": "Start rounds standing at least once a session.",
+          "mistake": "Diving for a submission from inside the guard. Pass first."
+        },
+        {
+          "key": "white-4",
+          "title": "Finisher",
+          "focus": "Link the whole chain and finish from dominant positions.",
+          "hours": 75,
+          "why": "The blue belt standard is not a list of moves. It is having a sensible answer in every major position and being able to control an untrained, bigger person. This stage ties the pieces into one chain: takedown, pass, pin, finish.",
+          "train": [
+            "Back control with seatbelt and hooks, rear naked choke with proper hand-fighting",
+            "Mount: armbar and cross-collar or arm-triangle",
+            "Side control: americana and kimura",
+            "Submission defence: armbar, triangle, guillotine, rear naked choke",
+            "Full-chain drilling: takedown to pass to mount to finish, with a resisting partner"
+          ],
+          "competencies": [
+            {"id": "backfin", "text": "I can take the back and finish a rear naked choke on white belts in live rolling."},
+            {"id": "sub3", "text": "I finish three different submissions in live rolling, all from top or back positions."},
+            {"id": "def4", "text": "I have a first-line defence to armbar, triangle, guillotine and rear naked choke."},
+            {"id": "answer", "text": "There is no major position where I have no idea what to do."},
+            {"id": "newbie", "text": "I can control a brand-new, bigger training partner safely, without hurting them."},
+            {"id": "pace", "text": "I can roll five rounds at a controlled pace and still think clearly in the last one."}
+          ],
+          "rolling": "Roll with brand-new white belts and work only control. Roll with blue belts and work only defence.",
+          "mistake": "Collecting techniques from videos. Depth on a few answers beats a hundred moves you cannot hit."
+        }
+      ]
+    },
+    {
+      "id": "blue",
+      "name": "Blue Belt",
+      "color": "#2463eb",
+      "theme": "Escape & Explore",
+      "creed": "You know enough to be dangerous. Mostly to yourself.",
+      "summary": "Blue is the longest belt and the one most people quit at. Saulo Ribeiro's theme for it is escapes: make your defence so reliable that nothing scares you. On top of that you build breadth, trying guards, passes and takedowns until a game starts to appear. The IBJJF minimum is two years for a reason.",
+      "hours_total": 600,
+      "ibjjf_min_months": 24,
+      "stage_floor_weeks": 21,
+      "typical_years": [2, 4],
+      "weekly_sessions": [3, 5],
+      "split": {"drill": 45, "positional": 30, "live": 25},
+      "stages": [
+        {
+          "key": "blue-0",
+          "title": "Bulletproof",
+          "focus": "Late escapes and submission defence that work on good people.",
+          "hours": 100,
+          "why": "A new blue belt has a target on their back. White belts want to tap you and upper belts stop going easy. Deep defensive confidence is what lets you experiment for the next two years without your ego wrecking your training.",
+          "train": [
+            "Late-stage submission escapes: armbar, triangle, kimura, rear naked choke",
+            "Pin escapes against people who know how to hold: north-south, knee-on-belly, tight mount",
+            "Escapes that finish in guard or on top, not just back to neutral",
+            "Turtle: defending the back take and getting back to guard",
+            "Start every positional round one step from disaster"
+          ],
+          "competencies": [
+            {"id": "lateEsc", "text": "I have a working late escape from armbar, triangle and rear naked choke."},
+            {"id": "pinsGood", "text": "I escape side control and mount against other blue belts regularly."},
+            {"id": "counter", "text": "At least one of my escapes ends with me in a better position than neutral."},
+            {"id": "turtle", "text": "From turtle I can stop the hooks going in and recover guard."},
+            {"id": "ego", "text": "I can get tapped by a white belt and ask them what they did."}
+          ],
+          "rolling": "Give up bad positions on purpose with partners you trust.",
+          "mistake": "Protecting the belt. Stalling so nobody taps you teaches you nothing."
+        },
+        {
+          "key": "blue-1",
+          "title": "Open Guard",
+          "focus": "Layered guard retention and two open guards you actually like.",
+          "hours": 120,
+          "why": "Closed guard alone will not hold against people who stand up and pass. Retention in layers (feet, knees, frames, hips) plus one or two open guards that suit your body is the base of every modern bottom game.",
+          "train": [
+            "Retention layers: feet on hips and biceps, knee shield, frames, hip escape, inversion basics",
+            "Pick two: De La Riva, collar-sleeve, butterfly, half guard or single-leg X",
+            "Two sweeps from each, plus the grip fight that sets them up",
+            "Guard vs standing passers and guard vs kneeling passers",
+            "Wrestling up from guard to a single leg"
+          ],
+          "competencies": [
+            {"id": "layers", "text": "When my feet get beaten I still have knees and frames before the pass is done."},
+            {"id": "two", "text": "I have two open guards I choose on purpose, not by accident."},
+            {"id": "sweeps4", "text": "I sweep blue belts from each of those guards."},
+            {"id": "grips", "text": "I win or break grips before committing to an attack."},
+            {"id": "standUp", "text": "I can come up on a single leg when the sweep stalls."}
+          ],
+          "rolling": "Start seated against a standing partner. Your score is rounds without being passed.",
+          "mistake": "Changing guards every week. Give a guard three months before judging it."
+        },
+        {
+          "key": "blue-2",
+          "title": "Guard Passer",
+          "focus": "A loose pass, a tight pass, and the ability to switch.",
+          "hours": 120,
+          "why": "Passing is the hardest skill to build because the guard player has four limbs between you and them. One fast, mobile pass and one slow pressure pass, chained, cover almost every guard you will meet.",
+          "train": [
+            "Loose passing: toreando, leg drag, long step",
+            "Pressure passing: over-under, knee cut, half guard smash",
+            "Headquarters position and how to return to it",
+            "Chaining: when the knee cut is blocked go to the leg drag, and back again",
+            "Finishing the pass: kill the hips, win the head, settle for three seconds"
+          ],
+          "competencies": [
+            {"id": "loose", "text": "I pass blue belts with at least one mobile, standing pass."},
+            {"id": "tight", "text": "I pass blue belts with at least one pressure pass."},
+            {"id": "switch", "text": "I change direction or style mid-pass when the first attempt is blocked."},
+            {"id": "noSweep", "text": "I rarely get swept while passing; my base and grips come first."},
+            {"id": "settle", "text": "When I pass I hold the position; I do not give guard straight back."}
+          ],
+          "rolling": "Play top only for a month. Start in your partner's favourite guard.",
+          "mistake": "Passing with speed alone. If it only works when you are fresh it is not a pass."
+        },
+        {
+          "key": "blue-3",
+          "title": "Standing & Pressure",
+          "focus": "Takedowns that connect, and pins people hate.",
+          "hours": 130,
+          "why": "Every match starts on the feet and every point is scored from control. A blue belt who can decide where the fight happens and make a pin exhausting has stopped being a white belt with more techniques.",
+          "train": [
+            "A takedown chain: single leg to double, or collar drag to ankle pick",
+            "Grip fighting and stance; sprawl and front headlock",
+            "A guard pull that lands in a sweep, not a scramble",
+            "Pin transitions: side control, north-south, knee-on-belly, mount",
+            "Mount and back attacks in combination: armbar, choke, back take"
+          ],
+          "competencies": [
+            {"id": "td", "text": "I score takedowns on blue belts in live rounds that start standing."},
+            {"id": "sprawl", "text": "I can stop a basic shot and take a front headlock."},
+            {"id": "pinFlow", "text": "I move between three pins without giving space."},
+            {"id": "mountAtk", "text": "From mount I have two attacks that feed each other."},
+            {"id": "backHold", "text": "I can keep back control on a blue belt for a minute."}
+          ],
+          "rolling": "Half your rounds start standing.",
+          "mistake": "Pulling guard every time because standing is uncomfortable."
+        },
+        {
+          "key": "blue-4",
+          "title": "First A-Game",
+          "focus": "One connected route from grip to tap, and a taste of leg locks.",
+          "hours": 130,
+          "why": "Roy Dean describes purple as the belt where techniques become combinations. Before your coach ties it on you should have one route you can force on people your level: a guard, the sweep it gives, the pass that follows, the pin, the finish.",
+          "train": [
+            "Write your A-game down as a flowchart and drill it end to end",
+            "A plan B for the two most common ways people stop it",
+            "Straight ankle lock and basic ashi garami; leg lock defence and safe tapping",
+            "Heel hook awareness for no-gi: recognise it and tap early",
+            "Explain techniques to white belts; teaching exposes what you do not understand"
+          ],
+          "competencies": [
+            {"id": "agame", "text": "I can describe my A-game from first grip to finish and I hit it on blue belts."},
+            {"id": "planB", "text": "I have a rehearsed answer for the two most common counters to it."},
+            {"id": "legs", "text": "I can attack a straight ankle lock and I know how to defend the common leg entanglements."},
+            {"id": "both", "text": "I am competent top and bottom; nobody would call me a guard-only or top-only player."},
+            {"id": "teach", "text": "I can teach a fundamental technique to a beginner clearly."},
+            {"id": "time", "text": "I have been a blue belt for at least two years."}
+          ],
+          "rolling": "Force your A-game on blue belts. Play your worst position with white belts.",
+          "mistake": "Thinking the blue belt blues mean you are getting worse. Everyone around you improved too."
+        }
+      ]
+    },
+    {
+      "id": "purple",
+      "name": "Purple Belt",
+      "color": "#8b3fd6",
+      "theme": "The Guard & Your Game",
+      "creed": "Now it is your jiu-jitsu, not your coach's.",
+      "summary": "Purple is where a personal style appears. Saulo Ribeiro assigns the guard to purple: a bottom game that is a real threat, not just a place to recover. Combinations replace single moves, momentum and timing start to matter more than strength, and you begin to teach.",
+      "hours_total": 500,
+      "ibjjf_min_months": 18,
+      "stage_floor_weeks": 16,
+      "typical_years": [1.5, 3],
+      "weekly_sessions": [4, 6],
+      "split": {"drill": 35, "positional": 30, "live": 35},
+      "stages": [
+        {
+          "key": "purple-0",
+          "title": "Systemise",
+          "focus": "Turn your A-game into a system three moves deep.",
+          "hours": 90,
+          "why": "At blue you had a route. At purple every step on that route needs branches, so that each defence your partner picks walks them into the next attack.",
+          "train": [
+            "Map each A-game position: best attack, their two likely defences, your answer to each",
+            "Drill the branches as sequences, not single reps",
+            "Film rounds and count where the system breaks",
+            "Grip fighting as the first step of the system",
+            "One new position per quarter, not per week"
+          ],
+          "competencies": [
+            {"id": "tree", "text": "My main positions each have at least three linked attacks."},
+            {"id": "dilemma", "text": "I regularly catch people with the second or third attack, not the first."},
+            {"id": "review", "text": "I review my own rolling (video or notes) and adjust training from it."},
+            {"id": "gripFirst", "text": "I rarely start an exchange with worse grips than my partner."},
+            {"id": "blueCtl", "text": "I control most blue belts without relying on speed or strength."}
+          ],
+          "rolling": "Name the system before the round. Afterwards, note where it broke.",
+          "mistake": "Adding width when you need depth."
+        },
+        {
+          "key": "purple-1",
+          "title": "Dangerous Guard",
+          "focus": "A guard that sweeps or submits people your level.",
+          "hours": 100,
+          "why": "A defensive guard buys time. An offensive guard wins. Pairing sweeps with submissions forces the passer to choose which way to lose.",
+          "train": [
+            "Sweep and submission pairs from your main guard",
+            "Off-balancing (kuzushi) before every attack",
+            "Guard against pressure passers and against fast standing passers",
+            "Back takes from guard: arm drag, kiss of the dragon or berimbolo entries, crab ride",
+            "Recovering to your guard, not just any guard"
+          ],
+          "competencies": [
+            {"id": "gFinish", "text": "I submit purple belts from guard."},
+            {"id": "gSweep", "text": "I sweep purple belts with setups, not surprise."},
+            {"id": "both2", "text": "My guard works against both pressure and speed passing."},
+            {"id": "backG", "text": "I take the back from guard in live rolling."},
+            {"id": "recover", "text": "After a scramble I usually land back in my own guard."}
+          ],
+          "rolling": "Bottom only for a month against your best passers.",
+          "mistake": "Playing guard only against people you can already sweep."
+        },
+        {
+          "key": "purple-2",
+          "title": "Leg Lock Literate",
+          "focus": "Attack and defend the legs within your rule set.",
+          "hours": 100,
+          "why": "Modern grappling runs through the legs. Whether or not you like them, a purple belt who cannot recognise ashi garami positions is a liability to their own knees.",
+          "train": [
+            "Entanglements: single-leg X, outside ashi, 50/50, the saddle",
+            "Straight ankle lock, kneebar, toe hold (check which are legal at your level)",
+            "Heel hook mechanics and defence for no-gi",
+            "Escaping by clearing the knee line and hiding the heel",
+            "Tapping to leg locks early; ligaments give no warning"
+          ],
+          "competencies": [
+            {"id": "ashi", "text": "I can name and enter three leg entanglements."},
+            {"id": "llFinish", "text": "I finish a legal leg lock on people my level."},
+            {"id": "llDef", "text": "I escape leg entanglements by clearing the knee line, not by spinning blindly."},
+            {"id": "llSafe", "text": "I apply leg locks slowly enough that partners always have time to tap."},
+            {"id": "llPass", "text": "I can pass without leaving my legs behind."}
+          ],
+          "rolling": "Leg-lock-only positional rounds with a trusted partner at 60%.",
+          "mistake": "Rolling out of heel hooks. Know the direction or tap."
+        },
+        {
+          "key": "purple-3",
+          "title": "The B-Side",
+          "focus": "Find the weakest part of your game and fix it.",
+          "hours": 105,
+          "why": "A system player with one big hole gets solved by good opponents. This stage is deliberately uncomfortable: you spend it where you are worst.",
+          "train": [
+            "Audit: which position do you avoid? Start every round there",
+            "Your weak side for passing and guard",
+            "Wrestling up and scrambling instead of accepting bottom",
+            "The half of the game you neglect: gi if you only do no-gi, and the reverse",
+            "Top game if you are a guard player; guard if you are a passer"
+          ],
+          "competencies": [
+            {"id": "audit", "text": "I can name my three worst positions and I have trained them on purpose."},
+            {"id": "weakSide", "text": "I can pass and play guard on my weak side against blue belts."},
+            {"id": "scramble", "text": "I win a fair share of scrambles and wrestle up from bottom."},
+            {"id": "cross", "text": "I am functional in both gi and no-gi."},
+            {"id": "balance", "text": "Purple belts cannot beat me just by forcing me top or bottom."}
+          ],
+          "rolling": "Lose on purpose in your worst position, with good people.",
+          "mistake": "Only rolling your A-game because it feels good to win."
+        },
+        {
+          "key": "purple-4",
+          "title": "Timing",
+          "focus": "Do more with less: efficiency, anticipation, mentoring.",
+          "hours": 105,
+          "why": "Brown belts are recognisable by how little effort they seem to spend. That comes from being a move ahead and from pressure that does the work for you.",
+          "train": [
+            "Slow rolling: no explosive movement allowed",
+            "Attacking transitions instead of settled positions",
+            "Baiting: offer a reaction you want",
+            "Coaching lower belts through their problems",
+            "Testing: competition, or hard rounds with brown and black belts"
+          ],
+          "competencies": [
+            {"id": "easy", "text": "I can roll ten rounds without being wrecked, because I spend effort in bursts."},
+            {"id": "ahead", "text": "I often know my partner's next move before they make it."},
+            {"id": "bait", "text": "I set traps on purpose and people walk into them."},
+            {"id": "mentor", "text": "I regularly help white and blue belts solve problems."},
+            {"id": "tested", "text": "I have tested my game against higher belts or in competition."},
+            {"id": "time", "text": "I have been a purple belt for at least 18 months."}
+          ],
+          "rolling": "Flow rounds at 50% with people better than you.",
+          "mistake": "Using athleticism to cover late reactions."
+        }
+      ]
+    },
+    {
+      "id": "brown",
+      "name": "Brown Belt",
+      "color": "#8a5a2b",
+      "theme": "Pass & Polish",
+      "creed": "Black belt with rough edges. Sand them off.",
+      "summary": "Brown belt is refinement. Saulo Ribeiro assigns guard passing to brown: top pressure that breaks any guard. Mostly it is about removing the last holes, raising your finishing rate and being able to explain why your jiu-jitsu works.",
+      "hours_total": 400,
+      "ibjjf_min_months": 12,
+      "stage_floor_weeks": 10,
+      "typical_years": [1, 2],
+      "weekly_sessions": [4, 6],
+      "split": {"drill": 30, "positional": 30, "live": 40},
+      "stages": [
+        {
+          "key": "brown-0",
+          "title": "Top Dominance",
+          "focus": "Pass every guard and make top position miserable.",
+          "hours": 70,
+          "why": "Good guards at purple and brown do not open to one pass. Dominant passing is constant pressure, direction changes and patience until the guard player makes the mistake.",
+          "train": [
+            "An answer for each major guard: closed, half, butterfly, De La Riva, spider and lasso, X, leg entanglements",
+            "Pressure in every transition; never let them rest",
+            "Passing straight into submissions and back takes",
+            "Pinning without using your hands",
+            "Killing guards early: grips, angle, distance"
+          ],
+          "competencies": [
+            {"id": "everyGuard", "text": "No common guard leaves me without a plan."},
+            {"id": "passBrown", "text": "I pass brown belts' guards in live rolling."},
+            {"id": "passSub", "text": "I often pass directly into a submission or the back."},
+            {"id": "heavy", "text": "Training partners describe my top game as heavy."},
+            {"id": "noScramble", "text": "After passing I rarely lose the position in a scramble."}
+          ],
+          "rolling": "Top only, against the best guards in the room.",
+          "mistake": "Rushing the pass. Pressure plus time beats speed."
+        },
+        {
+          "key": "brown-1",
+          "title": "Closing",
+          "focus": "Raise your finishing rate with chained submissions.",
+          "hours": 80,
+          "why": "Against experienced people the first submission attempt almost never lands. Finishing at this level is control first, then a sequence of threats that removes their defences one by one.",
+          "train": [
+            "Control before the finish: every submission has a position that makes it inevitable",
+            "Chains: armbar, triangle, omoplata; kimura, back, choke; front headlock series",
+            "Finishing mechanics for your top three submissions",
+            "Back attacks against strong hand-fighting",
+            "Leg lock finishing under black-belt rules"
+          ],
+          "competencies": [
+            {"id": "finishRate", "text": "When I reach a dominant position on a purple belt I usually finish."},
+            {"id": "chains", "text": "I have two submission chains at least three attacks long."},
+            {"id": "mechanics", "text": "I can explain the fine detail that makes my best submission work."},
+            {"id": "backBrown", "text": "I finish from the back against brown belts."},
+            {"id": "noLose", "text": "I rarely lose position when a submission fails."}
+          ],
+          "rolling": "Submission-only rounds starting from control positions.",
+          "mistake": "Squeezing harder instead of fixing the angle."
+        },
+        {
+          "key": "brown-2",
+          "title": "Counter-Fighter",
+          "focus": "Counters to the counters, and traps set two moves ahead.",
+          "hours": 80,
+          "why": "At the top, everyone knows the same techniques. Exchanges are decided by who sees the next layer first.",
+          "train": [
+            "For each of your best attacks, the best counter and your answer to it",
+            "Re-counters in the leg game and in the scramble",
+            "Tempo: changing speed to break rhythm",
+            "Studying opponents and specific game plans",
+            "Reaction drilling with a partner feeding live counters"
+          ],
+          "competencies": [
+            {"id": "layer3", "text": "I have answers to the standard counters against my main attacks."},
+            {"id": "tempo", "text": "I change tempo on purpose to create openings."},
+            {"id": "plan", "text": "I can build a game plan for a specific opponent and follow it."},
+            {"id": "composure", "text": "I stay composed when behind on points or in a deep submission."},
+            {"id": "blackRounds", "text": "I have competitive rounds with black belts."}
+          ],
+          "rolling": "Let partners get their best position first, then solve it.",
+          "mistake": "Assuming the technique failed when the timing did."
+        },
+        {
+          "key": "brown-3",
+          "title": "No Holes",
+          "focus": "Audit against every style and fix what is left.",
+          "hours": 85,
+          "why": "A black belt is expected to be competent everywhere. This is the last deliberate sweep for gaps: standing, leg locks, weak side, gi or no-gi.",
+          "train": [
+            "Standing game to a level where you choose top or bottom",
+            "Full leg lock offence and defence",
+            "Rounds against specialists: wrestlers, leg lockers, pressure passers, flexible guards",
+            "Weak-side training until the difference is small",
+            "Conditioning that matches how you fight"
+          ],
+          "competencies": [
+            {"id": "standing", "text": "I decide where the match takes place against most opponents."},
+            {"id": "legsFull", "text": "I am not afraid of anyone's leg lock game."},
+            {"id": "styles", "text": "No style of opponent consistently shuts me down."},
+            {"id": "weak", "text": "My weak side is good enough that most people cannot tell."},
+            {"id": "gas", "text": "My fitness never decides the outcome of a hard round."}
+          ],
+          "rolling": "Seek out the people who give you the most trouble.",
+          "mistake": "Polishing strengths because the weaknesses are embarrassing at brown."
+        },
+        {
+          "key": "brown-4",
+          "title": "Professor in Waiting",
+          "focus": "Understand it well enough to teach it.",
+          "hours": 85,
+          "why": "The black belt marks someone who can pass the art on. Being able to explain principles, fix another person's game and carry yourself as an example is part of the standard.",
+          "train": [
+            "Teach classes or run drilling groups",
+            "Explain techniques by principle: base, posture, leverage, timing",
+            "Build a white belt's game over months and watch it work",
+            "Write your own curriculum for one position",
+            "Keep testing yourself with black belts"
+          ],
+          "competencies": [
+            {"id": "principles", "text": "I explain why techniques work, not just how."},
+            {"id": "coach", "text": "I have noticeably improved another student's game."},
+            {"id": "curric", "text": "I can lay out a full teaching progression for at least one position."},
+            {"id": "example", "text": "I am a safe, trusted partner for every size and level in the room."},
+            {"id": "style", "text": "People can describe my style; it is recognisably mine."},
+            {"id": "time", "text": "I have been a brown belt for at least a year."}
+          ],
+          "rolling": "Roll with everyone. Give each partner the round they need.",
+          "mistake": "Waiting for the belt instead of already behaving like one."
+        }
+      ]
+    }
+  ],
+  "black": {
+    "id": "black",
+    "name": "Black Belt",
+    "color": "#111111",
+    "theme": "Begin Again",
+    "creed": "A black belt is a white belt who never quit.",
+    "summary": "Saulo Ribeiro assigns submissions to black belt: with every position understood, the art becomes finishing with the least possible effort. The IBJJF requires a minimum age of 19 and at least a year at brown. After that, degrees come with time: three years each for the first three. The roadmap ends here. The training does not."
+  }
+}
