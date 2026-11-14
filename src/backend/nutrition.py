@@ -11,11 +11,11 @@ from __future__ import annotations
 DEFAULT_WEIGHT_KG = 75.0
 
 DAY_TYPES = {
-    # carbs g/kg, default MET if nothing is logged, label
+    # carbs g/kg, net training cost in kcal per kg per hour (METs above resting), label
     "rest":     {"carbs": 3.0, "met": 0.0, "label": "Rest day"},
-    "light":    {"carbs": 4.0, "met": 5.0, "label": "Light / drilling day"},
-    "moderate": {"carbs": 5.0, "met": 7.5, "label": "Normal class day"},
-    "hard":     {"carbs": 7.0, "met": 10.0, "label": "Hard / double-session day"},
+    "light":    {"carbs": 4.0, "met": 3.0, "label": "Light / drilling day"},
+    "moderate": {"carbs": 5.0, "met": 5.0, "label": "Normal class day"},
+    "hard":     {"carbs": 7.0, "met": 7.0, "label": "Hard / double-session day"},
 }
 GOALS = {
     "cut":      {"energy": 0.85, "protein": 2.2, "carb_shift": -1.0},
@@ -25,13 +25,16 @@ GOALS = {
 
 
 def met_for_rpe(rpe: float) -> float:
+    """Net cost of a whole session (warm-up, drilling and rolling averaged) in kcal/kg/h.
+    A class is not continuous hard rolling, so these sit below peak grappling values
+    (Compendium of Physical Activities: martial arts about 5 METs moderate, 10 vigorous)."""
     if rpe <= 3:
-        return 4.0
+        return 2.5
     if rpe <= 5:
-        return 6.0
+        return 4.0
     if rpe <= 7:
-        return 8.0
-    return 10.0
+        return 5.5
+    return 7.5
 
 
 def day_type_from_load(load: float, sessions: int) -> str:
@@ -72,7 +75,7 @@ def targets(*, weight_kg: float | None, height_cm: float | None = None, age: int
     protein = g["protein"] * kg
     carbs_goal = max(2.5, tier["carbs"] + g["carb_shift"]) * kg
     fat = (energy - 4 * protein - 4 * carbs_goal) / 9
-    fat = max(0.8 * kg, min(1.2 * kg, fat))
+    fat = max(0.8 * kg, min(0.35 * energy / 9, fat))    # floor 0.8 g/kg, ceiling 35% of energy
     carbs = (energy - 4 * protein - 9 * fat) / 4
     carbs = max(2.5 * kg, carbs if g["energy"] < 1 else max(carbs, carbs_goal))
     kcal = 4 * protein + 4 * carbs + 9 * fat

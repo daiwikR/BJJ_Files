@@ -226,6 +226,9 @@ _SCALE = {
 }
 
 
+_BODY_LABELS = {"soreness": "Soreness", "fatigue": "Energy", "stress": "Stress", "mood": "Motivation"}
+
+
 def _body_factors(checkin: dict | None) -> list[dict]:
     if not checkin:
         return [_factor("checkin", "body", "Body check-in", "not done", "info", 0,
@@ -233,7 +236,7 @@ def _body_factors(checkin: dict | None) -> list[dict]:
     out = []
     for key, (pens, labels) in _SCALE.items():
         v = max(1, min(5, int(checkin.get(key, 1))))
-        out.append(_factor(key, "body", key.capitalize(), labels[v - 1],
+        out.append(_factor(key, "body", _BODY_LABELS[key], labels[v - 1],
                            "good" if v <= 2 else "watch" if v == 3 else "bad", pens[v - 1],
                            f"You rated this {v}/5."))
     ill = checkin.get("illness", "none")

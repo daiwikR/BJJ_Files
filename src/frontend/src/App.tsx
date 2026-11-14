@@ -1,217 +1,142 @@
-import React, { useEffect } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { useBJJStore } from './store/bjjStore'
-import Header from './components/UI/Header'
-import SkillTreeCanvas from './components/SkillTree/SkillTreeCanvas'
-import LogForm from './components/SessionLog/LogForm'
-import WeeklyChart from './components/Charts/WeeklyChart'
-import DrillQueue from './components/UI/DrillQueue'
-import RecentSessions from './components/UI/RecentSessions'
-import VideoModal from './components/UI/VideoModal'
-import { BRANCH_COLORS } from './types'
+import { useEffect } from 'react'
+import { useApp, Tab } from './store/appStore'
+import Icon from './components/common/Icon'
+import Belt from './components/common/Belt'
+import ProfileForm from './components/ProfileForm'
+import AwardModal from './components/AwardModal'
+import Dashboard from './pages/Dashboard'
+import RoadmapPage from './pages/Roadmap'
+import Train from './pages/Train'
+import Recovery from './pages/Recovery'
+import Fuel from './pages/Fuel'
+import Techniques from './pages/Techniques'
+import Badges from './pages/Badges'
+import { BELT_NAMES, ZONE_COLORS } from './types'
+
+const NAV: { id: Tab; label: string; icon: string; short?: string }[] = [
+  { id: 'dojo', label: 'Dojo', icon: 'dojo' },
+  { id: 'roadmap', label: 'Roadmap', icon: 'roadmap' },
+  { id: 'train', label: 'Train', icon: 'train' },
+  { id: 'recovery', label: 'Recovery', icon: 'recovery', short: 'Recover' },
+  { id: 'fuel', label: 'Fuel', icon: 'fuel' },
+  { id: 'techniques', label: 'Techniques', icon: 'techniques', short: 'Tech' },
+  { id: 'badges', label: 'Badges', icon: 'badges' },
+]
+
+const PAGES: Record<Tab, () => JSX.Element | null> = {
+  dojo: Dashboard, roadmap: RoadmapPage, train: Train, recovery: Recovery, fuel: Fuel, techniques: Techniques, badges: Badges,
+}
+
+function Wordmark() {
+  return (
+    <div className="flex items-end gap-2">
+      <span className="display text-4xl leading-none">OSS<span className="text-blood">/</span></span>
+      <span className="label mb-1 leading-tight">BJJ<br />Progress</span>
+    </div>
+  )
+}
 
 export default function App() {
-  const {
-    fetchTree,
-    fetchSessions,
-    fetchStats,
-    fetchDrillQueue,
-    showLogForm,
-    showStats,
-    selectedNodeId,
-    setSelectedNode,
-    setActiveVideo,
-    treeData,
-    error,
-    loading,
-  } = useBJJStore()
+  const { booted, offline, tab, setTab, profile, readiness, boot, showProfile, openProfile, consistency } = useApp()
 
-  useEffect(() => {
-    fetchTree()
-    fetchSessions()
-    fetchStats()
-    fetchDrillQueue()
-  }, [])
+  useEffect(() => { boot() }, [boot])
 
-  const selectedNode = selectedNodeId && treeData
-    ? treeData.nodes.find(n => n.id === selectedNodeId)
-    : null
+  if (!booted) {
+    return <div className="flex h-full items-center justify-center"><span className="display animate-pulse text-5xl">OSS<span className="text-blood">/</span></span></div>
+  }
 
-  const selectedTechs = selectedNode && treeData
-    ? treeData.techniques.filter(t => t.position_id === selectedNode.id)
-    : []
-
-  return (
-    <div className="flex h-screen flex-col overflow-hidden bg-bjj-dark text-white">
-      <Header />
-
-      <div className="flex flex-1 overflow-hidden">
-        {/* Left sidebar */}
-        <AnimatePresence>
-          {showLogForm && (
-            <motion.aside
-              key="log-form"
-              initial={{ width: 0, opacity: 0 }}
-              animate={{ width: 320, opacity: 1 }}
-              exit={{ width: 0, opacity: 0 }}
-              transition={{ duration: 0.25, ease: 'easeInOut' }}
-              className="overflow-hidden border-r border-bjj-border bg-bjj-card"
-            >
-              <div className="h-full w-80 overflow-y-auto p-4">
-                <LogForm />
-              </div>
-            </motion.aside>
-          )}
-        </AnimatePresence>
-
-        {/* Main area: tree + right panel */}
-        <div className="flex flex-1 flex-col overflow-hidden">
-          {/* Error banner */}
-          <AnimatePresence>
-            {error && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                className="overflow-hidden bg-red-900/40 px-4 py-2 text-xs text-red-300 border-b border-red-800"
-              >
-                ⚠ {error} — is the backend running? (<code>uvicorn src.backend.main:app --reload</code>)
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <div className="flex flex-1 overflow-hidden">
-            {/* Skill tree canvas */}
-            <div className="flex-1 overflow-hidden">
-              <SkillTreeCanvas />
-            </div>
-
-            {/* Right panel — drill queue + recent sessions */}
-            <aside className="hidden w-56 flex-col gap-3 overflow-y-auto border-l border-bjj-border bg-bjj-card p-3 xl:flex">
-              <DrillQueue />
-              <RecentSessions />
-
-              {/* Branch legend */}
-              <div className="rounded-xl border border-bjj-border bg-bjj-dark p-3">
-                <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Branches</h3>
-                <ul className="space-y-1.5">
-                  {Object.entries(BRANCH_COLORS).map(([branch, color]) => (
-                    <li key={branch} className="flex items-center gap-2 text-xs text-gray-400">
-                      <div className="h-2 w-2 rounded-full" style={{ background: color }} />
-                      <span className="capitalize">{branch}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </aside>
-          </div>
-
-          {/* Bottom stats panel */}
-          <AnimatePresence>
-            {showStats && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 160, opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="overflow-hidden border-t border-bjj-border bg-bjj-card px-4 py-3"
-              >
-                <WeeklyChart />
-              </motion.div>
-            )}
-          </AnimatePresence>
+  if (offline && !profile) {
+    return (
+      <div className="flex h-full items-center justify-center p-6">
+        <div className="panel panel-hot max-w-md">
+          <div className="kicker">No signal</div>
+          <h1 className="display mb-2 text-4xl">Backend is down</h1>
+          <p className="prose-dim text-sm">Start the API and reload:</p>
+          <pre className="num mt-3 overflow-x-auto bg-ink-950 p-3 text-xs text-bone">bash scripts/start.sh</pre>
         </div>
       </div>
+    )
+  }
 
-      {/* Node detail overlay (bottom of screen when node selected) */}
-      <AnimatePresence>
-        {selectedNode && (
-          <motion.div
-            initial={{ y: 80, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 80, opacity: 0 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="absolute bottom-6 left-1/2 z-40 -translate-x-1/2"
-            style={{ maxWidth: 600, width: '90vw' }}
-          >
-            <div
-              className="rounded-2xl border px-5 py-3 shadow-2xl backdrop-blur-sm"
-              style={{
-                background: 'rgba(10, 10, 26, 0.97)',
-                borderColor: BRANCH_COLORS[selectedNode.branch],
-                boxShadow: `0 0 30px ${BRANCH_COLORS[selectedNode.branch]}33`,
-              }}
-            >
-              {/* Top row */}
-              <div className="flex items-center gap-3 mb-2">
-                <div className="flex-1 min-w-0">
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">{selectedNode.branch}</div>
-                  <div className="text-sm font-bold text-white">{selectedNode.name}</div>
-                </div>
-                <div className="flex items-center gap-1 shrink-0">
-                  <div
-                    className="h-8 w-8 rounded-full border-2 flex items-center justify-center text-xs font-bold"
-                    style={{ borderColor: BRANCH_COLORS[selectedNode.branch], color: BRANCH_COLORS[selectedNode.branch] }}
-                  >
-                    {Math.round(selectedNode.proficiency)}
-                  </div>
-                  <span className="text-xs text-gray-500">%</span>
-                </div>
-                <p className="hidden sm:block text-xs text-gray-400 max-w-[200px] shrink">{selectedNode.description}</p>
-                <button
-                  onClick={() => setSelectedNode(null)}
-                  className="shrink-0 text-gray-600 hover:text-gray-300 transition-colors text-base leading-none ml-1"
-                  aria-label="Close"
-                >
-                  ✕
-                </button>
-              </div>
+  if (!profile) return <ProfileForm mode="onboard" />
 
-              {/* Technique buttons */}
-              {selectedTechs.length > 0 && (
-                <div className="border-t border-white/10 pt-2 flex flex-wrap gap-1.5">
-                  {selectedTechs.map(t => (
-                    t.video_id ? (
-                      <button
-                        key={t.id}
-                        onClick={() => setActiveVideo({ videoId: t.video_id!, title: t.name })}
-                        className="flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-medium transition-all hover:brightness-125 active:scale-95"
-                        style={{
-                          background: `${BRANCH_COLORS[selectedNode.branch]}22`,
-                          color: BRANCH_COLORS[selectedNode.branch],
-                          border: `1px solid ${BRANCH_COLORS[selectedNode.branch]}44`,
-                        }}
-                      >
-                        <span style={{ fontSize: 10 }}>▶</span>
-                        {t.name}
-                      </button>
-                    ) : (
-                      <span
-                        key={t.id}
-                        className="rounded-lg px-2.5 py-1 text-xs text-gray-500 bg-white/5 border border-white/10"
-                      >
-                        {t.name}
-                      </span>
-                    )
-                  ))}
-                </div>
-              )}
+  const Page = PAGES[tab]
+  const zone = readiness?.zone
+
+  return (
+    <div className="flex min-h-full">
+      {/* Desktop rail */}
+      <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-ink-600 bg-ink-950/80 lg:flex">
+        <div className="px-5 pb-4 pt-6"><Wordmark /></div>
+        <div className="tape" />
+        <nav className="flex-1 overflow-y-auto py-4" aria-label="Main">
+          {NAV.map((n, i) => {
+            const on = tab === n.id
+            return (
+              <button key={n.id} onClick={() => setTab(n.id)} aria-current={on ? 'page' : undefined}
+                className={`group relative flex w-full items-center gap-3 px-5 py-3 text-left transition-colors ${on ? 'bg-ink-800 text-bone' : 'text-ash hover:bg-ink-850 hover:text-bone'}`}>
+                {on && <span className="absolute inset-y-0 left-0 w-1 bg-blood" />}
+                <span className={`num text-[10px] ${on ? 'text-blood' : 'text-smoke'}`}>0{i + 1}</span>
+                <Icon name={n.icon} className={on ? 'text-blood' : ''} />
+                <span className="font-cond text-lg font-semibold uppercase tracking-[0.14em]">{n.label}</span>
+                {n.id === 'recovery' && zone && <span className="ml-auto h-2 w-2" style={{ background: ZONE_COLORS[zone.key] }} />}
+              </button>
+            )
+          })}
+        </nav>
+        <button onClick={() => openProfile(true)} className="border-t border-ink-600 px-5 py-4 text-left hover:bg-ink-850">
+          <Belt belt={profile.belt} stripes={profile.stripes} className="mb-2 h-4 w-full" />
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="font-cond text-base font-semibold uppercase tracking-wider">{profile.name || 'Athlete'}</div>
+              <div className="label">{BELT_NAMES[profile.belt]} · {profile.stripes} stripe{profile.stripes === 1 ? '' : 's'}</div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Loading shimmer */}
-      {loading && (
-        <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center bg-black/20">
-          <div className="rounded-xl border border-bjj-border bg-bjj-card px-6 py-4 text-sm text-purple-300">
-            Updating tree…
+            <Icon name="profile" className="text-ash" />
           </div>
-        </div>
-      )}
+        </button>
+      </aside>
 
-      {/* Video modal */}
-      <VideoModal />
+      <div className="flex min-w-0 flex-1 flex-col">
+        {/* Mobile top bar */}
+        <header className="sticky top-0 z-40 flex items-center justify-between border-b border-ink-600 bg-ink-950/95 px-4 py-2.5 backdrop-blur lg:hidden">
+          <Wordmark />
+          <div className="flex items-center gap-3">
+            {consistency && consistency.streak > 0 && (
+              <span className="num flex items-center gap-1 text-sm font-bold text-gold"><Icon name="flame" size={15} />{consistency.streak}</span>
+            )}
+            <button onClick={() => openProfile(true)} aria-label="Profile" className="flex items-center gap-2 text-ash hover:text-bone">
+              <Belt belt={profile.belt} stripes={profile.stripes} className="h-3.5 w-20" />
+              <Icon name="profile" />
+            </button>
+          </div>
+        </header>
+
+        {offline && (
+          <div className="bg-blood-deep px-4 py-2 text-center text-xs text-white">Lost contact with the backend. Changes are not being saved.</div>
+        )}
+
+        <main className={tab === 'techniques' ? 'flex-1' : 'mx-auto w-full max-w-[1180px] flex-1 px-4 pb-28 pt-6 sm:px-6 lg:pb-12 lg:pt-9'}>
+          <Page />
+        </main>
+      </div>
+
+      {/* Mobile bottom nav */}
+      <nav className="fixed inset-x-0 bottom-0 z-40 flex border-t border-ink-600 bg-ink-950/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden" aria-label="Main">
+        {NAV.map(n => {
+          const on = tab === n.id
+          return (
+            <button key={n.id} onClick={() => setTab(n.id)} aria-current={on ? 'page' : undefined}
+              className={`relative flex min-w-0 flex-1 flex-col items-center gap-0.5 px-0.5 py-2 ${on ? 'text-bone' : 'text-ash'}`}>
+              {on && <span className="absolute inset-x-3 top-0 h-0.5 bg-blood" />}
+              <Icon name={n.icon} size={20} className={on ? 'text-blood' : ''} />
+              <span className="font-cond text-[10px] font-semibold uppercase tracking-wide">{n.short ?? n.label}</span>
+            </button>
+          )
+        })}
+      </nav>
+
+      {showProfile && <ProfileForm mode="edit" />}
+      <AwardModal />
     </div>
   )
 }

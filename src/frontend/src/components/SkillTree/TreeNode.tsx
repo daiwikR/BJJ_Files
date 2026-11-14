@@ -44,8 +44,8 @@ export default function TreeNode({ node, isSelected, isHovered, onClick, onHover
       {/* Body */}
       <circle
         r={R}
-        fill={active ? '#130e2e' : '#0b0b1e'}
-        stroke={active ? color : '#252545'}
+        fill={active ? '#15151a' : '#0e0e11'}
+        stroke={active ? color : '#4a4a55'}
         strokeWidth={highlight ? 3 : 2}
       />
 
@@ -72,7 +72,7 @@ export default function TreeNode({ node, isSelected, isHovered, onClick, onHover
       <text
         textAnchor="middle"
         dominantBaseline="central"
-        fill={active ? '#ffffff' : '#35355a'}
+        fill={active ? '#ece7dd' : '#928e85'}
         fontSize={15}
         fontWeight="800"
         letterSpacing="0.5"
@@ -85,7 +85,7 @@ export default function TreeNode({ node, isSelected, isHovered, onClick, onHover
       <text
         y={R + 15}
         textAnchor="middle"
-        fill={active ? '#e2e8f0' : '#4b5563'}
+        fill={active ? '#ece7dd' : '#928e85'}
         fontSize={11}
         fontWeight={active ? '600' : '400'}
         style={{ pointerEvents: 'none', userSelect: 'none', fontFamily: 'inherit' }}

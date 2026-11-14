@@ -3,7 +3,7 @@ set -e
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
-echo "=== BJJ Skill Tree — Dev Startup ==="
+echo "=== OSS // BJJ Progress — Dev Startup ==="
 echo ""
 
 # ─── Backend ───────────────────────────────────────────────
